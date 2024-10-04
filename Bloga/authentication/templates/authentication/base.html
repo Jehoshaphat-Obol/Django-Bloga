@@ -1,0 +1,78 @@
+<!-- auth base template -->
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bloga | {%block title%}{%endblock%}</title>
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="manifest" href="{% static 'js/manifest.json' %}">
+    </head>
+
+<body>
+    <header>
+        <nav>
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-center">
+                    <div class="flex fle-cx-1 itemsenter justify-center sm:items-stretch">
+                        <div class="flex flex-shrink-0 justify-center items-center text-lg font-bold">
+                            <a href="./" class="inline-block"><i class="fa-solid fa-feather"></i> Bloga</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+            {% if messages %}
+                <div class="flash-message left-1/2 hidden lg:flex justify-end max-w-7xl px-2 sm:px-6 lg:px-8 absolute w-full lg:top-20 -translate-x-1/2">
+                    <div class="flex gap-2 rounded-md shadow-md bg-white p-4  lg:left-28 w-fit">
+                        <div class="text-secondary">
+                            <i class="fa-regular fa-circle-check"></i>
+                        </div>
+                        <div>
+                            {% for message in messages%}
+                            <div class="font-semibold">{{message.tags}}</div>
+                            <ul>
+                                <div class="text-gray-700">{{message}}</div>
+                            </ul>
+                            {% endfor %}
+                        </div>
+                        <div class="cursor-pointer close-flash">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+    </header>
+        {% if messages %}
+            <div class="flash-message left-1/2 flex lg:hidden justify-center -translate-x-1/2 max-w-7xl px-2 sm:px-6 lg:px-8 absolute w-full bottom-8"">
+                <div class="flex gap-2 rounded-md shadow-md bg-white p-4 w-fit">
+                    <div class="text-secondary">
+                        <i class="fa-regular fa-circle-check"></i>
+                    </div>
+                    <div>
+                        {% for message in messages%}
+                            <div class="font-semibold">{{message.tags}}</div>
+                            <ul>
+                                <div class="text-gray-700">{{message}}</div>
+                            </ul>
+                        {% endfor %}
+                    </div>
+                    <div class="cursor-pointer close-flash">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    <main>
+        {%block content%}{%endblock%}
+    </main>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>

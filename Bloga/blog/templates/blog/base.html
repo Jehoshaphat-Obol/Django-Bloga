@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloga | {%block title%}{%endblock%}</title>
+  <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="manifest" href="{% static 'js/manifest.json' %}">
+</head>
+
+<body>
+  <header>
+    <nav>
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            <div class="relative flex h-16 items-center justify-between">
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex flex-shrink-0 items-center text-lg font-bold">
+                      <a href="{% url 'blog:home' %}" class="inline-block"><i class="fa-solid fa-feather"></i> Bloga</a>
+                    </div>
+                </div>
+                <div
+                    class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    
+                    {% if user %}
+                    <!-- Profile dropdown -->
+                        <a title="write an article" href="{% url 'blog:write' %}">
+                            <button type="button"
+                                class="relative h-8 w-8 rounded-full p-1 text-gray-400 focus:outline-none ring-secondary focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-white">
+                                <span class="absolute -inset-1.5"></span>
+                                <span class="sr-only">Write a Blog</span>
+                                <i class="fa-solid fa-feather"></i>
+                            </button>
+                        </a>
+
+                        <div class="relative ml-3">
+                            <div>
+                                <button type="button"
+                                    class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-white ring-secondary"
+                                    id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                    <span class="absolute -inset-1.5"></span>
+                                    <span class="sr-only">Open user menu</span>
+                                    {%if user.profile_picture %}
+                                        <img class="h-8 w-8 rounded-full"
+                                        src="{% static user.profile_picture %}"
+                                        alt="">
+                                    {% else %}
+                                        <img class="h-8 w-8 rounded-full"
+                                        src="{% static 'img/profile.png' %}"
+                                        alt="">
+                                    {% endif %}
+                                </button>
+                            </div>
+                            <div class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-primary ring-opacity-5 focus:outline-none"
+                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1"
+                                id="profile_menu">
+                                <!-- Active: "bg-gray-100", Not Active: "" -->
+                                <a href="" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-0">Your Profile</a>
+                                <a href="{% url 'authentication:sign_out' %}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                id="user-menu-item-2">Sign out</a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="relative ml-3 flex gap-2">
+                            <a href="{% url 'authentication:sign_in' %}" class="btn-secondary">Sign in</a><a href="{% url 'authentication:sign_up' %}" class="btn-primary">Sign up</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+    {% if messages %}
+        <div class="flash-message left-1/2 hidden lg:flex justify-end max-w-7xl px-2 sm:px-6 lg:px-8 absolute w-full lg:top-20 -translate-x-1/2">
+            <div class="flex gap-2 rounded-md shadow-md bg-white p-4  lg:left-28 w-fit">
+                <div class="text-secondary">
+                    <i class="fa-regular fa-circle-check"></i>
+                </div>
+                <div>
+                    {% for  message in messages%}
+                    <div class="font-semibold">{{message.tags}}</div>
+                    <ul>
+                        <div class="text-gray-700">{{message}}</div>
+                    </ul>
+                {% endfor %}
+                </div>
+                <div class="cursor-pointer close-flash">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</header>
+    {% if messages %}
+        <div class="flash-message left-1/2 flex lg:hidden justify-center -translate-x-1/2 max-w-7xl px-2 sm:px-6 lg:px-8 absolute w-full bottom-8"">
+            <div class="flex gap-2 rounded-md shadow-md bg-white p-4 w-fit">
+                <div class="text-secondary">
+                    <i class="fa-regular fa-circle-check"></i>
+                </div>
+                <div>
+                    {% for message in messages%}
+                        <div class="font-semibold">{{message.tags}}</div>
+                        <ul>
+                            <div class="text-gray-700">{{message}}</div>
+                        </ul>
+                    {% endfor %}
+                </div>
+                <div class="cursor-pointer close-flash">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <main>
+        {%block content%}
+        {%endblock%}
+    </main>
+    <script src="{% static 'js/index.js' %}"></script>
+</body>
+
+</html>

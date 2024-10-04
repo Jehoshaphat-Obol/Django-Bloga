@@ -1,0 +1,359 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{post.title}}{%endblock%}
+
+{% block content %}
+    <div class="bg-white">
+        <div class="mx-auto max-w-7xl pt-0 px-6 lg:px-8">
+            <div class="mx-auto grid max-w-2xl grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-8 border-t border-gray-200 py-16 sm:py-24 lg:mx-0 lg:max-w-none">
+                <h2 class="text-3xl lg:col-span-3 font-bold tracking-tight text-gray-900 sm:text-4xl">
+                    {{post.title}}
+                </h2>
+                <article class="flex flex-col lg:col-span-2 items-start justify-between">
+                    <div class="group relative">
+                        <div class="flex items-center gap-x-4 text-xs">
+                            <time datetime="{{post.publish|date:'Y-m-d'}}" class="text-gray-500">{{post.publish|date:'F j, Y'}}</time>
+                            {%for tag in post.tags.all %}
+                                <a href="{% url 'blog:tag' tag%}" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{tag.name}}</a>
+                            {% endfor %}
+                        </div>
+                        <h3 class="mt-3 text-lg group-hover:text-gray-600">
+                            <div class="relative mt-8 flex items-center gap-x-4">
+                                <img src="" alt="{{post.authors.users.username}}" class="h-10 w-10 rounded-full bg-gray-50">
+                                <div class="text-sm leading-6">
+                                    <p class="font-semibold text-gray-900">
+                                        <a href="#">
+                                            <span class="absolute inset-0"></span>
+                                            @{{post.author.username}}
+                                        </a>
+                                    </p>
+                                    <p class="text-gray-600">Author</p>
+                                </div>
+                            </div>
+                        </h3>
+                        <p class="mt-5 text-sm leading-6 text-gray-600">{{post.content}}</p>
+                    </div>
+                </article>
+                <!-- Comments Section -->
+                <ul role="list" id="comments" class="bg-yellow-300 p-4 rounded-lg divide-y divide-primary h-fit">
+                    <!-- Top Interactions -->
+                    <li class="flex gap-4 mb-4 text-lg">
+                        <div>
+                            <i class="fa-regular fa-heart"></i>
+                            <span>54k</span>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-comment" onclick="openCommentModal('main')"></i>
+                            <span>{{post.comments | length}}</span>
+                        </div>
+                        <div>
+                            <i class="fa-regular fa-paper-plane"></i>
+                            <span>1.2k</span>
+                        </div>
+                    </li>
+
+                    <!-- Top Comments -->
+                    <li class="flex flex-col justify-between gap-x-6 py-5 comment">
+                        <div class="flex min-w-0 gap-x-4">
+                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            <div class="min-w-0 flex-auto">
+                                <div>
+                                    <span>Leslie Alexander</span>
+                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲ Posted 3h
+                                        ago</span>
+                                </div>
+                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor sit amet...</p>
+                                <div class="stats flex gap-4 mt-4">
+                                    <div>
+                                        <i class="fa-regular fa-heart"></i>
+                                        <span>5.4k</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                        <span class="show-replies cursor-pointer">2k</span>
+                                    </div>
+                                </div>
+
+                                <!-- Replies Section -->
+                                <ul role="list" class="replies bg-yellow-300 rounded-lg divide-y divide-primary mt-4 hidden">
+                                    <li class="flex flex-col justify-between gap-x-6 py-5 reply">
+                                        <div class="flex min-w-0 gap-x-4">
+                                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                            <div class="min-w-0 flex-auto">
+                                                <div>
+                                                    <span>Leslie Alexander</span>
+                                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲
+                                                        Posted 3h ago</span>
+                                                </div>
+                                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor
+                                                    sit amet...</p>
+                                                <div class="flex gap-4 mt-4">
+                                                    <div>
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span>5.4k</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                                        <span class="show-replies cursor-pointer">2k</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="flex flex-col justify-between gap-x-6 py-5 comment">
+                        <div class="flex min-w-0 gap-x-4">
+                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            <div class="min-w-0 flex-auto">
+                                <div>
+                                    <span>Leslie Alexander</span>
+                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲ Posted 3h
+                                        ago</span>
+                                </div>
+                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor sit amet...</p>
+                                <div class="stats flex gap-4 mt-4">
+                                    <div>
+                                        <i class="fa-regular fa-heart"></i>
+                                        <span>5.4k</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                        <span class="show-replies cursor-pointer">2k</span>
+                                    </div>
+                                </div>
+
+                                <!-- Replies Section -->
+                                <ul role="list" class="replies bg-yellow-300 rounded-lg divide-y divide-primary mt-4 hidden">
+                                    <li class="flex flex-col justify-between gap-x-6 py-5 reply">
+                                        <div class="flex min-w-0 gap-x-4">
+                                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                            <div class="min-w-0 flex-auto">
+                                                <div>
+                                                    <span>Leslie Alexander</span>
+                                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲
+                                                        Posted 3h ago</span>
+                                                </div>
+                                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor
+                                                    sit amet...</p>
+                                                <div class="flex gap-4 mt-4">
+                                                    <div>
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span>5.4k</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                                        <span class="show-replies cursor-pointer">2k</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="flex flex-col justify-between gap-x-6 py-5 reply">
+                                        <div class="flex min-w-0 gap-x-4">
+                                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                            <div class="min-w-0 flex-auto">
+                                                <div>
+                                                    <span>Leslie Alexander</span>
+                                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲
+                                                        Posted 3h ago</span>
+                                                </div>
+                                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor
+                                                    sit amet...</p>
+                                                <div class="flex gap-4 mt-4">
+                                                    <div>
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span>5.4k</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                                        <span class="show-replies cursor-pointer">2k</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="flex flex-col justify-between gap-x-6 py-5 reply">
+                                        <div class="flex min-w-0 gap-x-4">
+                                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                            <div class="min-w-0 flex-auto">
+                                                <div>
+                                                    <span>Leslie Alexander</span>
+                                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲
+                                                        Posted 3h ago</span>
+                                                </div>
+                                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor
+                                                    sit amet...</p>
+                                                <div class="flex gap-4 mt-4">
+                                                    <div>
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span>5.4k</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                                        <span class="show-replies cursor-pointer">2k</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="flex flex-col justify-between gap-x-6 py-5 reply">
+                                        <div class="flex min-w-0 gap-x-4">
+                                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                            <div class="min-w-0 flex-auto">
+                                                <div>
+                                                    <span>Leslie Alexander</span>
+                                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲
+                                                        Posted 3h ago</span>
+                                                </div>
+                                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor
+                                                    sit amet...</p>
+                                                <div class="flex gap-4 mt-4">
+                                                    <div>
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span>5.4k</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                                        <span class="show-replies cursor-pointer">2k</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="flex flex-col justify-between gap-x-6 py-5 comment">
+                        <div class="flex min-w-0 gap-x-4">
+                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            <div class="min-w-0 flex-auto">
+                                <div>
+                                    <span>Leslie Alexander</span>
+                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲ Posted 3h
+                                        ago</span>
+                                </div>
+                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor sit amet...</p>
+                                <div class="stats flex gap-4 mt-4">
+                                    <div>
+                                        <i class="fa-regular fa-heart"></i>
+                                        <span>5.4k</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                        <span class="show-replies cursor-pointer">2k</span>
+                                    </div>
+                                </div>
+
+                                <!-- Replies Section -->
+                                <ul role="list" class="replies bg-yellow-300 rounded-lg divide-y divide-primary mt-4 hidden">
+                                    <li class="flex flex-col justify-between gap-x-6 py-5 reply">
+                                        <div class="flex min-w-0 gap-x-4">
+                                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                            <div class="min-w-0 flex-auto">
+                                                <div>
+                                                    <span>Leslie Alexander</span>
+                                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲
+                                                        Posted 3h ago</span>
+                                                </div>
+                                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor
+                                                    sit amet...</p>
+                                                <div class="flex gap-4 mt-4">
+                                                    <div>
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span>5.4k</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                                        <span class="show-replies cursor-pointer">2k</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="flex flex-col justify-between gap-x-6 py-5 comment hidden">
+                        <div class="flex min-w-0 gap-x-4">
+                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                            <div class="min-w-0 flex-auto">
+                                <div>
+                                    <span>Leslie Alexander</span>
+                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲ Posted 3h
+                                        ago</span>
+                                </div>
+                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor sit amet...</p>
+                                <div class="stats flex gap-4 mt-4">
+                                    <div>
+                                        <i class="fa-regular fa-heart"></i>
+                                        <span>5.4k</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                        <span class="show-replies cursor-pointer">2k</span>
+                                    </div>
+                                </div>
+
+                                <!-- Replies Section -->
+                                <ul role="list" class="replies bg-yellow-300 rounded-lg divide-y divide-primary mt-4 hidden">
+                                    <li class="flex flex-col justify-between gap-x-6 py-5 reply">
+                                        <div class="flex min-w-0 gap-x-4">
+                                            <img class="h-12 w-12 flex-none rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                                            <div class="min-w-0 flex-auto">
+                                                <div>
+                                                    <span>Leslie Alexander</span>
+                                                    <span class="mt-1 text-xs leading-5 text-gray-500 font-light pb-1">⏲
+                                                        Posted 3h ago</span>
+                                                </div>
+                                                <p class="mt-1 text-xs leading-5 text-gray-500">Lorem ipsum dolor
+                                                    sit amet...</p>
+                                                <div class="flex gap-4 mt-4">
+                                                    <div>
+                                                        <i class="fa-regular fa-heart"></i>
+                                                        <span>5.4k</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa-regular fa-comment" onclick="openCommentModal('reply')"></i>
+                                                        <span class="show-replies cursor-pointer">2k</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- Show More Comments Button -->
+                    <li class="text-center py-3">
+                        <button id="show-more-comments" class="text-blue-500 hover:underline">Show more
+                            comments</button>
+                    </li>
+                </ul>
+
+                <!-- Modal Form for Writing Comments -->
+                <div id="comment-modal"  style="z-index: 10;" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden transition-opacity duration-300 backdrop-blur-sm">
+                    <div class="bg-white rounded-lg p-6 max-w-lg w-full my-6 mx-6">
+                        <form method="POST">
+                            <h2 class="text-lg font-semibold mb-4">Write a Comment</h2>
+                            <textarea class="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4"></textarea>
+                            <div class="mt-4 flex justify-end">
+                                <button type="button" class="btn-secondary mr-4" onclick="closeCommentModal()">Cancel</button>
+                                <button type="submit" class="btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock%}

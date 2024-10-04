@@ -1,0 +1,26 @@
+{%extends 'auth/base.html'%}
+
+{%block title%}Error - {{error.code}} {%endblock%}
+
+{%block content%}
+
+<main class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
+    <div class="text-center">
+        <p class="text-3xl font-semibold text-secondary">{{error.code}}</p>
+        <h1 class="mt-4 text-3xl font-bold tracking-tight text-primary sm:text-5xl">{{error.name}}</h1>
+        <p class="mt-6 text-base leading-7 text-gray-600">
+            {{error.description}}
+        </p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a href="{{url_for('bloga.index')}}"
+                class="btn-primary">Go
+                back home</a>
+                <a href="https://wa.me/255682951872?text=Hello,%20I%20need%20support" class="text-sm font-semibold text-primary">
+                    Contact support <span aria-hidden="true">&rarr;</span>
+                </a>
+                
+        </div>
+    </div>
+</main>
+
+{%endblock%}

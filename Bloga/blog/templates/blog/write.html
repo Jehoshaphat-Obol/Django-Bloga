@@ -1,0 +1,27 @@
+{% extends 'blog/base.html'%}
+
+{% block title %}New Post{%endblock%}
+{%  block content %}
+<div class="mx-auto h-screen flex min-h-screen max-w-7xl px-6 lg:px-8 bg-white py-20 sm:py-20">
+    <form class="h-full flex-1 flex flex-col justify-start items-start gap-4" id="blogForm" method="POST">
+        {% csrf_token %}
+        {{form.title}}
+        <div class="flex gap-2 justify-between w-full">
+            <div id="tag-container" class="flex gap-2"></div>
+            <input type="text" id="tag-input" placeholder="Type a tag here and press comma, click them to delete" class="blog-normal w-full block" >
+        </div>
+        {{form.tags}}
+        {{form.status}}
+        {{form.content}}
+        <div class="font-semibold text-sm">
+            <span id="words">0 words</span>
+            <span id="characters">0 characters</span>
+        </div>
+        <div class="flex gap-2">
+            <button type="button" id="draft" class="btn-secondary">Save as Draft</button>
+            <button type="button" id="publish" class="btn-primary">Publish Blog</button>
+            <button type="submit" id="submit" class="hidden">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

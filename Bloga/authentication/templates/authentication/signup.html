@@ -1,0 +1,75 @@
+{%extends 'authentication/base.html'%}
+
+{%block title%}Sign up{%endblock%}
+
+{%block content%}
+
+<div class="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up on Bloga</h2>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-6" action="{% url 'authentication:sign_up' %}" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="first_name" class="block text-sm font-medium leading-6 text-gray-900">{{form.first_name.label}}</label>
+                <div class="mt-2">
+                    {{form.first_name}}
+                </div>
+            </div>
+            <div>
+                <label for="last_name" class="block text-sm font-medium leading-6 text-gray-900">{{form.last_name.label}}</label>
+                <div class="mt-2">
+                    {{form.last_name}}
+                </div>
+            </div>
+            <div>
+                <label for="username" class="block text-sm font-medium leading-6 text-gray-900">{{form.username.label}}</label>
+                <div class="mt-2">
+                    {{form.username}}
+                </div>
+            </div>
+            <div>
+                <label for="full_name" class="block text-sm font-medium leading-6 text-gray-900">{{form.fullname.label}}</label>
+                <div class="mt-2">
+                    {{form.fullname}}
+                </div>
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">{{form.email.label}}</label>
+                <div class="mt-2">
+                    {{form.email}}
+                </div>
+            </div>
+
+            <div>
+                <div class="flex items-center justify-between">
+                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">{{form.password1.label}}</label>
+                </div>
+                <div class="mt-2">
+                    {{form.password1}}
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center justify-between">
+                    <label for="cpassword"
+                        class="block text-sm font-medium leading-6 text-gray-900">{{form.password2.label}}</label>
+                </div>
+                <div class="mt-2">
+                    {{form.password2}}
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn-secondary w-full">Sign Up</button>
+            </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm text-gray-500">
+            Already a member
+            <a href="{% url 'authentication:sign_in' %}" class="font-semibold leading-6 text-primary">Sign in</a>
+        </p>
+    </div>
+</div>
+{%endblock%}

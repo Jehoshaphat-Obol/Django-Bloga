@@ -1,0 +1,45 @@
+{%extends 'authentication/base.html'%}
+
+{%block title%}Sign in{%endblock%}
+
+{%block content%}
+<div class="flex min-h-screen flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign in to Bloga</h2>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-6" action="#" method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">{{form.username.label}}</label>
+                <div class="mt-2">
+                    {{form.username}}
+                </div>
+            </div>
+
+            <div>
+                <div class="flex items-center justify-between">
+                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">{{form.password.label}}</label>
+                    <div class="text-sm">
+                        <a href="#" class="font-semibold text-primary">Forgot
+                            password?</a>
+                    </div>
+                </div>
+                <div class="mt-2">
+                    {{form.password}}
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn-secondary w-full">Sign In</button>
+            </div>
+        </form>
+
+        <p class="mt-10 text-center text-sm text-gray-500">
+            Not a member?
+            <a href="{%url 'authentication:sign_up' %}" class="font-semibold leading-6 text-primary">Sign up</a>
+        </p>
+    </div>
+</div>
+{%endblock%}
