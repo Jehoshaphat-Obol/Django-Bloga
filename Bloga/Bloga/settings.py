@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +29,9 @@ SECRET_KEY = 'django-insecure-p%j5=mm2q8t17w)^=7%kwhv!vwt$+9)f7)q#ub6&a8+ewbgsjc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    # "10.42.0.1",
+]
 
 
 # Application definition
@@ -37,6 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # extras
+    "django.contrib.humanize",
     
     # extended apps
     'authentication.apps.AuthenticationConfig',
@@ -79,13 +88,25 @@ WSGI_APPLICATION = 'Bloga.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+MYSQL = {
+    'default': {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": env('MYSQL_DATABASE'),
+        "USER": env('MYSQL_USERNAME'),
+        "PASSWORD": env('MYSQL_PASSWORD'),
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
+}
 
-DATABASES = {
+MYSQLITE = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DATABASES = MYSQLITE
 
 
 # Password validation
@@ -125,6 +146,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIR = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'static'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'authentication/static/media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

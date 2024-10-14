@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Posts
+from .models import Posts, Comments
 import random
 
 # Register your models here.
@@ -12,4 +12,11 @@ class PostsModel(admin.ModelAdmin):
     raw_id_fields = ['author']
     date_hierarchy = 'publish'
     ordering = ['status', 'publish']
+    show_facets = admin.ShowFacets.ALWAYS
+    
+@admin.register(Comments)
+class CommentsModel(admin.ModelAdmin):
+    list_display = ['post', 'user', 'content', 'date']
+    list_filter = ['post', 'user', 'content', 'date']
+    search_fields = ['post', 'user', 'content', 'date']
     show_facets = admin.ShowFacets.ALWAYS

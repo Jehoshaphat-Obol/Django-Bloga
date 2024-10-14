@@ -1,0 +1,115 @@
+{% extends 'blog/base.html' %}
+{%load static %}
+{% block title %}{{user.username}}{%endblock%}
+
+{% block content %}
+<div class="mx-auto max-w-7xl px-6 lg:px-8 bg-white py-24 sm:py-32">
+    <div class="px-4 sm:px-0">
+        <h3 class="text-base font-semibold leading-7 text-gray-900">Profile Information</h3>
+        <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Personal details.</p>
+    </div>
+    <div class="mt-6 border-t border-gray-100">
+        <dl class="divide-y divide-gray-100">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">Full name</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{user.get_full_name|title}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">Username</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">@{{user.username}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">Email address</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{user.email}}</dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">Bio</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">
+                    {{user.profile.bio}}
+                </dd>
+            </div>
+            <div class="flex gap-2" style="margin-top: 16px;">
+                <button class="btn-primary" onclick="openModal('editModal')">Edit
+                    Information</button>
+            </div>
+    </div>
+</div>
+<!-- Modal -->
+<div id="editModal"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden backdrop-blur-sm opacity-0 duration-300 transition-opacity h-screen overflow-y-auto">
+    <div class="bg-white rounded-lg p-6 max-w-md m-6 mt-24 w-full">
+        <h2 class="text-xl font-bold mb-4 text-center">Update Information</h2>
+        <form id="updateForm" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="flex justify-center relative">
+                <label class="block text-sm font-medium" for="file_input">
+                    <div type="button"
+                        class="focus:outline-none group ring-secondary focus:ring-4 focus:ring-secondary focus:ring-offset-4 focus:ring-offset-white rounded-full">
+                        {%if user.profile.dp %}
+                            <img class="h-24 w-24 rounded-full"
+                            src="{% static user.profile.dp.url %}"
+                            alt="" id="profilePicture">
+                        {% else %}
+                            <img class="h-24 w-24 rounded-full"
+                            src="{% static 'img/profile.png' %}"
+                            alt id="profilePicture">
+                        {% endif %}
+                        <div
+                            class="h-24 w-24 rounded-full bg-[#00000066] text-sm text-white absolute font-semibold justify-center items-center top-0 hidden group-hover:flex">
+                            <div>EDIT</div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+            <div class="mb-4">
+                <label for="fullname" class="block text-sm font-medium">{{form.first_name.label}}</label>
+                {{form.first_name}}
+            </div>
+            <div class="mb-4">
+                <label for="fullname" class="block text-sm font-medium">{{form.last_name.label}}</label>
+                {{form.last_name}}
+            </div>
+            <div class="mb-4">
+                <label for="fullname" class="block text-sm font-medium">{{form.email.label}}</label>
+                {{form.email}}
+            </div>
+
+            <!-- Bio -->
+            <div class="mb-4">
+                <label for="bio" class="block text-sm font-medium">{{form.bio.label}}</label>
+                {{form.bio}}
+            </div>
+
+            <!-- Profile Picture -->
+            <div class="mb-4 hidden">
+                {{form.dp}}
+            </div>
+
+            <!-- Old Password -->
+            <div class="mb-4">
+                <label for="oldPassword" class="block text-sm font-medium">{{form.password.label}}</label>
+                {{form.password}}
+            </div>
+
+            <!-- New Password -->
+            <div class="mb-4">
+                <label for="newPassword" class="block text-sm font-medium">{{form.password1.label}}</label>
+                {{form.password1}}
+            </div>
+
+            <!-- Confirm New Password -->
+            <div class="mb-4">
+                <label for="confirmPassword" class="block text-sm font-medium">{{form.password2.label}}</label>
+                {{form.password2}}
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex justify-end">
+                <button type="submit" onclick="submitForm('updateForm')" class="mr-2 btn-secondary">Save</button>
+                <button type="button" class="mr-2 btn-primary" onclick="closeModal('editModal')">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

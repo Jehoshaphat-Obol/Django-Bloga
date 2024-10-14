@@ -1,4 +1,5 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block title%}Home{% endblock %}
 
@@ -10,13 +11,22 @@
                 {%block heading%}From bloga{%endblock%}
             </h2>
             <p class="mt-2 text-lg leading-8 text-gray-600">
-                {% block subheading %}Read, Learn and Share your knowledge..{%endblock%}</p>
+                {% block subheading %}
+                    Discover &nbsp;
+                    <a href="{% url 'blog:tags_list' %}" class="text-sm relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">topics</a>
+                    <a href="{% url 'blog:user_list'%}" class="text-sm relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">users</a>
+                {%endblock%}
+            </p>
         </div>
-        <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <h2 class="lg:col-span-3 text-2xl font-semibold">{%block list_title %}{{page_title}}{% endblock %}</h2>
             {% for post in posts%}
             <article class="flex max-w-xl flex-col items-start justify-between">
             <div class="flex items-center gap-x-4 text-xs">
                 <time datetime="{{post.publish|date:'Y-m-d'}}" class="text-gray-500">{{post.publish|date:'F j, Y'}}</time>
+                {% if post.status == "DF" %}
+                    <span class="relative z-10 rounded-full bg-yellow-300 px-3 py-1.5 font-medium text-gray-600">Draft</span>
+                {% endif %}
                 {%for tag in post.tags.all %}
                     <a href="{% url 'blog:tag' tag%}" class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{tag.name}}</a>
                 {% endfor %}
@@ -31,10 +41,15 @@
                 <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{post.content}}</p>
             </div>
             <div class="relative mt-8 flex items-center gap-x-4">
-                <img src="" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                {% if post.author.profile.dp %}
+                    <img src="{% static post.author.profile.dp.url %}" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                {% else %}
+                    <img src="{% static 'img/profile.png' %}" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                {% endif %}
+
                 <div class="text-sm leading-6">
                 <p class="font-semibold text-gray-900">
-                    <a href="#">
+                    <a href="{% url 'blog:profile' post.author.username %}">
                     <span class="absolute inset-0"></span>
                     @{{post.author.username}}
                     </a>

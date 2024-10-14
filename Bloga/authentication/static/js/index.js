@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
   // Profile Dropdown Toggle
   const userMenuButton = document.getElementById("user-menu-button");
   const dropdownMenu = document.getElementById("profile_menu");
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Close dropdown when clicking outside
   document.addEventListener("click", function (event) {
-    event.stopPropagation()
+    event.stopPropagation();
     if (
       !userMenuButton?.contains(event.target) &&
       !dropdownMenu?.contains(event.target)
@@ -82,12 +81,14 @@ function closeModal(target) {
 }
 
 // Form validation and submission
-document.getElementById("updateForm")?.addEventListener("submit", function (event) {
+document
+  .getElementById("updateForm")
+  ?.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const oldPassword = document.getElementById("oldPassword").value;
-    const newPassword = document.getElementById("newPassword").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
+    const oldPassword = document.getElementById("password").value;
+    const newPassword = document.getElementById("password1").value;
+    const confirmPassword = document.getElementById("password2").value;
 
     if (newPassword === oldPassword && newPassword.length >= 8) {
       alert("New password cannot be the same as the old password.");
@@ -102,66 +103,87 @@ document.getElementById("updateForm")?.addEventListener("submit", function (even
     closeModal("editModal");
   });
 
-  function submitForm(id){
-    document.getElementById(id)?.submit();
-  }
+function submitForm(id) {
+  document.getElementById(id)?.submit();
+}
 
-  // content counter
-  const contentField = document.getElementById('content')
-  const words = document.getElementById('words')
-  const characters = document.getElementById('characters')
+// content counter
+const contentField = document.getElementById("content");
+const words = document.getElementById("words");
+const characters = document.getElementById("characters");
 
-  contentField?.addEventListener('input', function(){
-    const text = contentField.value.trim()
+contentField?.addEventListener("input", contentCounter);
+
+function contentCounter() {
+  if (contentField) {
+    const text = contentField.value.trim();
 
     const characterCount = text.length;
 
-    const wordCount = text.split(/\s+/).filter(word => word.length > 0).length;
+    const wordCount = text
+      .split(/\s+/)
+      .filter((word) => word.length > 0).length;
 
-    words.textContent  = wordCount + " words"
-    characters.textContent = characterCount + " characters"
-  })
+    words.textContent = wordCount + " words";
+    characters.textContent = characterCount + " characters";
+  }
+}
 
+contentCounter();
 
-
-  // tags interaction
-  document.getElementById('tag-input')?.addEventListener('keydown', function (event) {
-    if (event.key === ',') {
-        event.preventDefault();
-        addTag(this.value.trim());
-        this.value = '';
+// tags interaction
+document
+  .getElementById("tag-input")
+  ?.addEventListener("keydown", function (event) {
+    if (event.key === ",") {
+      event.preventDefault();
+      addTag(this.value.trim());
+      this.value = "";
     }
-});
+  });
 
 function addTag(tag) {
-    if (tag === '') return;
+  if (tag === "") return;
 
-    const tagContainer = document.getElementById('tag-container');
-    const tagPill = document.createElement('div');
-    tagPill.className = 'tag-pill';
-    tagPill.textContent = tag;
-    tagPill.addEventListener('click', function () {
-        tagContainer.removeChild(tagPill);
-        updateTagsInput();
-    });
-
-    tagContainer.appendChild(tagPill);
+  const tagContainer = document.getElementById("tag-container");
+  const tagPill = document.createElement("div");
+  tagPill.className = "tag-pill";
+  tagPill.textContent = tag;
+  tagPill.addEventListener("click", function () {
+    tagContainer.removeChild(tagPill);
     updateTagsInput();
+  });
+
+  tagContainer.appendChild(tagPill);
+  updateTagsInput();
 }
 
 function updateTagsInput() {
-    const tags = [];
-    document.querySelectorAll('#tag-container .tag-pill').forEach(function (tagPill) {
-        tags.push(tagPill.textContent);
+  const tags = [];
+  document
+    .querySelectorAll("#tag-container .tag-pill")
+    .forEach(function (tagPill) {
+      tags.push(tagPill.textContent);
     });
 
-    document.getElementById('tags').value = tags.join(',');
-    console.log(document.getElementById('tags').value)
+  document.getElementById("tags").value = tags.join(",");
 }
 
-document.querySelectorAll('.flash-message .close-flash').forEach(button => {
-  button.addEventListener('click', function() {
-      this.closest('.flash-message').style.display = 'none';
+tag = document.getElementById("tags");
+
+if (tag && tag.value) {
+  tags = tag.value.split(",");
+
+  tags.forEach((tag) => {
+    if (tag != "") {
+      addTag(tag);
+    }
+  });
+}
+
+document.querySelectorAll(".flash-message .close-flash").forEach((button) => {
+  button.addEventListener("click", function () {
+    this.closest(".flash-message").style.display = "none";
   });
 });
 
@@ -169,13 +191,13 @@ function previewImage(event) {
   const file = event.target.files[0];
   const reader = new FileReader();
 
-  reader.onload = function() {
-      const previewImage = document.getElementById('profilePicture');
-      previewImage.src = reader.result;
+  reader.onload = function () {
+    const previewImage = document.getElementById("profilePicture");
+    previewImage.src = reader.result;
   };
 
   if (file) {
-      reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
   }
 }
 
@@ -188,26 +210,30 @@ function formAction(action) {
   }
 
   if (form) {
-    document.getElementById('submit')?.click()
+    document.getElementById("submit")?.click();
   }
 }
 
-document.getElementById('draft')?.addEventListener('click', function() {
-  formAction('DF');
+document.getElementById("draft")?.addEventListener("click", function () {
+  formAction("DF");
 });
 
-document.getElementById('publish')?.addEventListener('click', function() {
-  formAction('PB');
+document.getElementById("publish")?.addEventListener("click", function () {
+  formAction("PB");
 });
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('static/service-worker.js')
-      .then(registration => {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("static/service-worker.js")
+      .then((registration) => {
+        console.log(
+          "ServiceWorker registration successful with scope: ",
+          registration.scope
+        );
       })
-      .catch(error => {
-        console.log('ServiceWorker registration failed: ', error);
+      .catch((error) => {
+        console.log("ServiceWorker registration failed: ", error);
       });
   });
 }

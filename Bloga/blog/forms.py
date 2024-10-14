@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Posts
+from .models import Posts, Comments
 
 class PostsForm(forms.ModelForm):
     title = forms.CharField(
@@ -42,3 +42,20 @@ class PostsForm(forms.ModelForm):
     class Meta:
         model = Posts
         fields = ['title', 'tags', 'content', 'status']
+        
+class CommentsForm(forms.ModelForm):
+        
+    content = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                "rows": 4,
+                "id":"bio",
+                "class":"mt-1 block w-full border border-gray-300 rounded-md p-2",
+            }
+        ),
+        required=True
+    )
+    
+    class Meta:
+        model = Comments
+        fields = ['content']
