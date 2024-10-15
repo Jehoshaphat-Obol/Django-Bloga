@@ -50,10 +50,17 @@ INSTALLED_APPS = [
     # extended apps
     'authentication.apps.AuthenticationConfig',
     'blog.apps.BlogConfig',
+    'api.apps.ApiConfig',
     
     # third party apps
-    'taggit'
+    'taggit',
+    'rest_framework'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
