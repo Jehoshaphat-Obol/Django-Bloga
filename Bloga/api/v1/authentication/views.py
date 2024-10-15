@@ -14,7 +14,7 @@ class UserListView(ListCreateAPIView):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]    
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]    
     
 class UserDetailView(RetrieveUpdateDestroyAPIView):
     """
@@ -22,7 +22,7 @@ class UserDetailView(RetrieveUpdateDestroyAPIView):
     """
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated, IsAccountOwnerOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsAccountOwnerOrReadOnly]
     lookup_field = 'username'
     
 

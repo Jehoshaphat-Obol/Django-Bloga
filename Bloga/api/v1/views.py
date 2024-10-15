@@ -9,5 +9,9 @@ def root(request):
     """
     return Response({
         "user": reverse('v1:user-list', request=request),
-        "group": reverse('v1:group-list', request=request)
+        "group": reverse('v1:group-list', request=request),
+        "post": reverse("v1:posts-list", request=request),
+        "comment": reverse("v1:comments-list", request=request),
+        "post-reaction": reverse("v1:postreactions-list", request=request),
+        "comment-reaction": reverse("v1:commentreactions-list", request=request),
     })

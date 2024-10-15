@@ -472,7 +472,7 @@ def write(request):
             content = form.cleaned_data.get('content')
             
             post = Posts(title=title, content=content,status=status, author=user)
-            post.save()
+            post.save(update=False)
             print(post.status)
             
             if tags:
@@ -483,7 +483,7 @@ def write(request):
                     
                     post.tags.add(tag)
                     
-            post.save()
+            post.save(update=False)
             
             if status == 'PB':    
                 messages.success(request, f"Posted - {title}")

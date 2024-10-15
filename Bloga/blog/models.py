@@ -37,7 +37,7 @@ class Posts(models.Model):
         choices=Status,
         default=Status.DRAFT
     )
-    publish = models.DateTimeField(default=timezone.now)
+    publish = models.DateTimeField(default=None, blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     tags = TaggableManager()
@@ -61,6 +61,10 @@ class Posts(models.Model):
         """
         Extend the function used to save posts to make sure that links are always unique
         """
+        
+        # set publish to now when ever the status is changed from draft to published
+        if not Posts.published.filter(link=self.link).exists() and self.status == "PB":
+            self.publish = timezone.now()
         
         if update:
             super().save(*args, **kwargs)
@@ -102,6 +106,9 @@ class Comments(models.Model):
         
         super().save(*args, **kwargs)
         
+    def __str__(self):
+        return f"comment: {self.content[:10]}... on {self.post.title[:10]}..."
+        
         
 class PostReactions(models.Model):
     class Reactions(models.TextChoices):
@@ -121,6 +128,9 @@ class PostReactions(models.Model):
         
     def save(self, *args, **kwargs):
         if self.post.status == "DF":
+            return
+        
+        if PostReactions.objects.filter(user=self.user, post=self.post).exists():
             return
         
         super().save(*args, **kwargs)
@@ -145,6 +155,8 @@ class CommentReactions(models.Model):
         if self.comment.post.status == "DF":
             return
         
+        if CommentReactions.objects.filter(user=self.user, comment=self.comment).exists():
+            return
         super().save(*args, **kwargs)
         
 class SavedPost(models.Model):
