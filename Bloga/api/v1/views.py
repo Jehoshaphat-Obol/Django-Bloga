@@ -8,6 +8,9 @@ def root(request):
     API V1 Root
     """
     return Response({
+        "login": reverse("v1:login", request=request),
+        "logout": reverse("v1:logout", request=request),
+        "logoutall": reverse("v1:logoutall", request=request),
         "user": reverse('v1:user-list', request=request),
         "profile": reverse("v1:profile-list", request=request),
         "group": reverse('v1:group-list', request=request),

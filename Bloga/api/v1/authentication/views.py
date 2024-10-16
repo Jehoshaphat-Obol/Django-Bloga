@@ -10,6 +10,11 @@ from .permissions import (
     IsSuperUser, IsProfileOwnerOrReadOnly
 )
 
+# knox
+from knox.views import LoginView
+from rest_framework.authtoken.serializers import AuthTokenSerializer
+from django.contrib.auth import login
+
 class UserListView(ListCreateAPIView):
     """
     API V1 endpoint for users
@@ -77,3 +82,14 @@ class ProfileDetailView(RetrieveUpdateAPIView):
         
         # Call the serializer's update method
         serializer.save()
+        
+        
+class LoginAPI(LoginView):
+    permission_classes = [permissions.AllowAny]
+    
+    def post(self, request, *args, **kwargs):
+        serializer = AuthTokenSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.validated_data['user']
+        login(request, user)
+        return super().post(request, *args, **kwargs)

@@ -3,10 +3,14 @@ from rest_framework import routers
 from .authentication import views as auth_views
 from .blog import views as blog_views
 from . import views
+from knox import views as knox_views
 
 app_name = "v1"
 urlpatterns = [
     path("",views.root),
+    path("api/login/", auth_views.LoginAPI.as_view(), name='login'),
+    path('api/logout/', knox_views.LogoutView.as_view(), name='logout'),
+    path('api/logoutall/', knox_views.LogoutAllView.as_view(), name='logoutall'),
     path("user/", auth_views.UserListView.as_view(), name="user-list"),
     path("user/<str:username>/", auth_views.UserDetailView.as_view(), name="user-detail"),
     path('group/', auth_views.GroupListView.as_view(), name="group-list"),
