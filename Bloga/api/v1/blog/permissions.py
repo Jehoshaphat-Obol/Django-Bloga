@@ -25,4 +25,9 @@ class IsCommentReactionOwernerOrReadOnly(BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.method in ['GET', 'HEAD', 'OPTIONS']:
             return True
+        return request.user == obj.user        
+
+
+class IsSavedPostOwerner(BasePermission):
+    def has_object_permission(self, request, view, obj):
         return request.user == obj.user

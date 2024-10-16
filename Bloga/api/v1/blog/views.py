@@ -1,16 +1,17 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework import permissions
 from blog.models import (
-    Posts, Comments, PostReactions, CommentReactions
+    Posts, Comments, PostReactions, CommentReactions,
+    SavedPost
 )
 from .serializers import (
     PostsSerializer, CommentsSerializer, PostReactionsSerializer,
-    CommentReactionsSerializer
+    CommentReactionsSerializer, SavedPostSerializer
 )
 from django.db.models import Q
 from .permissions import(
     IsPostOwernerOrReadOnly, IsCommentOwernerOrReadOnly, IsPostReactionOwernerOrReadOnly,
-    IsCommentReactionOwernerOrReadOnly,
+    IsCommentReactionOwernerOrReadOnly, IsSavedPostOwerner
 )
 
 
@@ -130,4 +131,32 @@ class CommentReactionsDetailView(RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCommentReactionOwernerOrReadOnly]
 
 
+class SavedPostListView(ListCreateAPIView):
+    """
+    API v1 endpoint for saved posts
+    """
+    queryset = SavedPost.objects.all()
+    serializer_class = SavedPostSerializer
+    permission_classes = [permissions.IsAuthenticated]
     
+    # only how saved post that belong to the user
+    def get_queryset(self):
+        user=self.request.user
+        self.queryset = SavedPost.objects.filter(user=user).all()
+        return super().get_queryset()
+    
+    # default owner of a saved post is the authenticated user
+    def perform_create(self, serializer):
+        saved = SavedPost(user=self.request.user)
+        serializer.instance = saved
+        return super().perform_create(serializer)
+    
+    
+
+class SavedPostDetailView(RetrieveUpdateDestroyAPIView):
+    """
+    API v1 endpoint for the saved post instances
+    """
+    queryset = SavedPost.objects.all()
+    serializer_class = SavedPostSerializer
+    permission_classes = [permissions.IsAuthenticated, IsSavedPostOwerner]

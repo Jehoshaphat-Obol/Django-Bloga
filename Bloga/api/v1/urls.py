@@ -19,5 +19,7 @@ urlpatterns = [
     path("post-reaction/<int:pk>/", blog_views.PostReactionsDetailView.as_view(), name="postreactions-detail"),
     path("comment-reaction/", blog_views.CommentReactionsListView.as_view(), name="commentreactions-list"),
     path("comment-reaction/<int:pk>/", blog_views.CommentReactionsDetailView.as_view(), name="commentreactions-detail"),
+    path("saved-post/", blog_views.SavedPostListView.as_view(), name="savedpost-list"),
+    path("saved-post/<int:pk>/", blog_views.SavedPostDetailView.as_view(), name="savedpost-detail"),
 ]
 

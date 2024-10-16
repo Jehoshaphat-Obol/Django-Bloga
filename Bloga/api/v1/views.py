@@ -14,4 +14,5 @@ def root(request):
         "comment": reverse("v1:comments-list", request=request),
         "post-reaction": reverse("v1:postreactions-list", request=request),
         "comment-reaction": reverse("v1:commentreactions-list", request=request),
+        "saved-post": reverse("v1:savedpost-list", request=request),
     })

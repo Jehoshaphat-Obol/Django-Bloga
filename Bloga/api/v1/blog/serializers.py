@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from blog.models import (
-    Posts, Comments, PostReactions, CommentReactions
+    Posts, Comments, PostReactions, CommentReactions,
+    SavedPost
 )
 from taggit.serializers import TagListSerializerField, TaggitSerializer
 
@@ -85,4 +86,13 @@ class CommentReactionsSerializer(serializers.HyperlinkedModelSerializer):
         }
         
         
+class SavedPostSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = SavedPost
+        fields = ['url', 'user', 'post']
+        extra_kwargs = {
+            "url": {"view_name": "v1:savedpost-detail", "lookup_field": "pk"},
+            "user": {"view_name": "v1:user-detail", "lookup_field": "username", "read_only": True},
+            "post": {"view_name": "v1:posts-detail", "lookup_field": "link"},   
+        }
         
