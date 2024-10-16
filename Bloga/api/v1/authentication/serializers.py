@@ -3,6 +3,7 @@ from django.contrib.auth.models import Group, User
 from django.contrib.auth.hashers import check_password
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from authentication.models import Profile
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     old_password = serializers.CharField(write_only=True, required=False)
@@ -49,6 +50,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         instance.save()
         return instance
 
+
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
@@ -56,4 +58,42 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         extra_kwargs = {
             "url": {"view_name": "v1:group-detail", "lookup_field": "name"}
         }
-                
+
+
+
+class ProfileSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ['url', 'user', 'bio', 'dp', 'follows', 'followers']
+        extra_kwargs = {
+            'url': {'view_name': 'v1:profile-detail', 'lookup_field':"pk",},
+            'user': {'view_name': 'v1:user-detail', 'lookup_field':"username", 'read_only': True},
+            'follows': {'view_name': 'v1:user-detail', 'lookup_field':"username", 'queryset': User.objects.all(), 'many': True},
+            'followers': {'view_name': 'v1:user-detail', 'lookup_field':"username", 'read_only': True, 'many': True},
+            'dp': {'required': False}
+        }
+
+    def update(self, instance, validated_data):
+        # Custom logic to ensure owner can only modify 'follows' and not 'followers'
+        request_user = self.context['request'].user
+        if instance.user != request_user:
+            raise serializers.ValidationError("You do not have permission to modify this profile.")
+
+        # Handle the follows logic (can only modify follows, not followers)
+        follows = validated_data.pop('follows', None)
+        
+        # Update the follows field if it's provided
+        if follows is not None:
+            instance.follows.set(follows)
+            # Sync the followers field for other users
+            for user in follows:
+                user.profile.followers.add(instance.user)
+            for user in instance.follows.all():
+                if user not in follows:
+                    user.profile.followers.remove(instance.user)
+        
+        instance.bio = validated_data.get('bio', instance.bio)
+        instance.dp = validated_data.get('dp', instance.dp)
+        instance.save()
+        
+        return instance

@@ -6,6 +6,13 @@ class IsAccountOwnerOrReadOnly(BasePermission):
             return True
 
         return request.user == obj
+    
+class IsProfileOwnerOrReadOnly(BasePermission):
+    def has_object_permission(self, request, view, obj):
+        if request.method in ['GET','HEAD', 'OPTIONS']:
+            return True
+
+        return request.user == obj.user
 
 class IsSuperUser(BasePermission):
     def has_object_permission(self, request, view, obj):

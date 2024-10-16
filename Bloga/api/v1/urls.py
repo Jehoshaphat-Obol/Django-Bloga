@@ -21,5 +21,7 @@ urlpatterns = [
     path("comment-reaction/<int:pk>/", blog_views.CommentReactionsDetailView.as_view(), name="commentreactions-detail"),
     path("saved-post/", blog_views.SavedPostListView.as_view(), name="savedpost-list"),
     path("saved-post/<int:pk>/", blog_views.SavedPostDetailView.as_view(), name="savedpost-detail"),
+    path('profiles/', auth_views.ProfileListView.as_view(), name='profile-list'),
+    path('profiles/<int:pk>/', auth_views.ProfileDetailView.as_view(), name='profile-detail'),
 ]
 
