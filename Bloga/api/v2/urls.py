@@ -4,7 +4,7 @@ from . import views
 
 app_name = "v2"
 urlpatterns = [
-    path("",views.root),
+    path("",views.root, name='root'),
     path("user/", auth_views.UserListView.as_view(), name="user-list"),
     path("user/<str:username>/", auth_views.UserDetailView.as_view(), name="user-detail"),
 ]

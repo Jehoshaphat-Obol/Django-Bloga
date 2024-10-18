@@ -7,7 +7,8 @@ from .serializers import ProfileSerializer
 from .serializers import UserSerializer, GroupSerializer
 from .permissions import (
     IsAccountOwnerOrReadOnly,
-    IsSuperUser, IsProfileOwnerOrReadOnly
+    IsSuperUser, IsProfileOwnerOrReadOnly,
+    HasProfileorCanCreate,
 )
 
 # knox
@@ -60,7 +61,7 @@ class ProfileListView(ListCreateAPIView):
     """
     queryset = Profile.objects.all()
     serializer_class = ProfileSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, HasProfileorCanCreate]
     lookup_field = 'pk'
 
     def perform_create(self, serializer):
