@@ -429,9 +429,7 @@ def user_follow(request, username):
     follower_profile, created = Profile.objects.get_or_create(user=request.user)
     followed_profile, created = Profile.objects.get_or_create(user=user)
     
-    follower_profile.follows.add(user)
-    followed_profile.followers.add(request.user)
-    
+    follower_profile.follow(followed_profile)
     return redirect('blog:profile', username=username)
 
 
@@ -451,8 +449,8 @@ def user_unfollow(request, username):
     follower_profile, created = Profile.objects.get_or_create(user=request.user)
     followed_profile, created = Profile.objects.get_or_create(user=user)
     
-    follower_profile.follows.remove(user)
-    followed_profile.followers.remove(request.user)
+    follower_profile.unfollow(followed_profile)
+    
     
     return redirect('blog:profile', username=username)
 

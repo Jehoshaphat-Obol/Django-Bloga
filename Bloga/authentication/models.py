@@ -18,13 +18,27 @@ class Profile(models.Model):
     follows = models.ManyToManyField(User, related_name='following', blank=True)
     followers = models.ManyToManyField(User, related_name='followers', blank=True)
     
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
+    def follow(self, profile):
+        """Follow another user profile."""
+        if profile.user != self.user:
+            self.follows.add(profile.user)
+            profile.followers.add(self.user)
+            self.save()
+            profile.save()
+
+    def unfollow(self, profile):
+        """Unfollow another user profile."""
+        if profile.user != self.user:
+            self.follows.remove(profile.user)
+            profile.followers.remove(self.user)
+            self.save()
+            profile.save()
+    
+
         
-        # user can not follow self and can not have self as a followere
-        if self.follows.filter(id=self.user.id).exists():
-            self.follows.remove(self.user)
             
-        if self.followers.filter(id=self.user.id).exists():
-            self.followers.remove(self.user)
+            
+        
+            
+            
         
