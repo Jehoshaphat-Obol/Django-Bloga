@@ -51,11 +51,13 @@ def sign_in_view(request):
             user  = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
+                next = request.GET.get('next', None)
                 messages.success(request, f"Welcome back {user.first_name} {user.last_name}")
+                if next:
+                    return redirect(next)
                 return redirect("blog:home")
         
             
-        print(form.error_messages)
         messages.error(request, "Invalid username or password")
     
     context = {

@@ -11,36 +11,33 @@ from .models import Posts, Comments, PostReactions, CommentReactions, SavedPost
 from .forms import PostsForm, CommentsForm
 from .permissions import is_post_owner
 
-# Create your views here.
-@login_required
 def home(request):
     user = request.user
     posts = Posts.published.all()
     
     context = {
-        "user": user,
+        "user": user if user.is_authenticated else None,
         "posts": posts,
     }
     return render(request, 'blog/home.html', context)
 
-# Create your views here.
-@login_required
+
 def posts_list(request):
     user = request.user
     posts = Posts.published.all()
     
     context = {
-        "user": user,
+        "user": user if user.is_authenticated else None,
         "posts": posts,
         "page_title": "Explore Posts 🧭",
     }
     return render(request, 'blog/posts.html', context)
 
-@login_required
+
 def post_detail(request, link):
     user=request.user
     
-    if Posts.objects.filter(author=user, link=link, status="DF").exists():
+    if user.is_authenticated and Posts.objects.filter(author=user, link=link, status="DF").exists():
         post = get_object_or_404(
             Posts,
             link=link,
@@ -55,12 +52,13 @@ def post_detail(request, link):
     form = CommentsForm()
     
     context = {
-        "user": user,
+        "user": user if user.is_authenticated else None,
         "post": post,
         "form": form,
     }
     
     return render(request, 'blog/post.html', context)
+
 
 @login_required
 @is_post_owner
@@ -214,25 +212,24 @@ def comment_like(request, comment_id):
     return redirect('blog:post', link=comment.post.link)
 
 
-@login_required
 def tags_list(request):
     user=request.user
     tags = Tag.objects.all()
     
     context = {
-        "user": user,
+        "user": user if user.is_authenticated else None,
         "tags": tags,
     }
     
     return render(request, 'blog/tags.html', context)
 
-@login_required
+
 def tag(request, name):
     user=request.user
     posts = Posts.published.filter(tags__name__in=[name])
     
     context = {
-        "user": user,
+        "user": user if user.is_authenticated else None,
         "posts": posts,
         "tag": name,
     }
@@ -240,7 +237,6 @@ def tag(request, name):
     return render(request, 'blog/tag.html', context)
 
 
-@login_required
 def user_list(request):
     users = User.objects.exclude(is_superuser=True).exclude(is_active=False)
     user = request.user
@@ -248,7 +244,7 @@ def user_list(request):
     
     context = {
         "users": users,
-        "user": user,
+        "user": user if user.is_authenticated else None,
         "tags": tags,
     }
     
@@ -256,7 +252,6 @@ def user_list(request):
 
 
 
-@login_required
 def user_following(request, username):
     user = get_object_or_404(
         User,
@@ -265,9 +260,10 @@ def user_following(request, username):
     users = user.profile.follows.all()
     tags = Tag.objects.all()
     
+    user = request.user
     context = {
         "users": users,
-        "user": user,
+        "user": user if user.is_authenticated else None,
         "tags": tags,
     }
     
@@ -275,7 +271,6 @@ def user_following(request, username):
 
 
 
-@login_required
 def user_followers(request, username):
     user = get_object_or_404(
         User,
@@ -285,9 +280,10 @@ def user_followers(request, username):
     users = user.profile.followers.all()
     tags = Tag.objects.all()
     
+    user = request.user
     context = {
         "users": users,
-        "user": user,
+        "user": user if user.is_authenticated else None,
         "tags": tags,
     }
     
@@ -363,6 +359,7 @@ def user_saved(request, username):
     }
     return render(request, 'blog/home.html', context)
 
+
 @login_required
 def user_favorites(request, username):
     user = request.user
@@ -388,7 +385,6 @@ def user_favorites(request, username):
     return render(request, 'blog/home.html', context)
 
 
-@login_required
 def profile(request, username):
     user = request.user
     profile = get_object_or_404(
@@ -405,7 +401,7 @@ def profile(request, username):
     
     
     context = {
-        "user":user,
+        "user":user if user.is_authenticated else None,
         "profile": profile,
         "posts": posts,
         "page_title": page_title,
