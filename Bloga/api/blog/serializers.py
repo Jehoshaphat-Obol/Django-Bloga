@@ -17,8 +17,8 @@ class PostsSerializer(TaggitSerializer, serializers.HyperlinkedModelSerializer):
         extra_kwargs = {
             "link":  {"read_only": True},
             "author": {"read_only": True},
-            "url": {"view_name": "v1:posts-detail", "lookup_field": "link"},
-            "author": {"view_name": "v1:user-detail", "lookup_field": "username", "read_only": True},
+            "url": {"view_name": "posts-detail", "lookup_field": "link"},
+            "author": {"view_name": "user-detail", "lookup_field": "username", "read_only": True},
             "publish": {"read_only": True},
             "created": {"read_only": True},
             "updated": {"read_only": True},
@@ -56,9 +56,9 @@ class CommentsSerializer(serializers.HyperlinkedModelSerializer):
         model = Comments
         fields = ['url', 'post', 'user', 'content']
         extra_kwargs = {
-            "url": {"view_name": "v1:comments-detail"},
-            "post": {"view_name": "v1:posts-detail", "lookup_field": "link"},
-            "user": {"view_name": "v1:user-detail", "lookup_field": "username", "read_only": True},
+            "url": {"view_name": "comments-detail"},
+            "post": {"view_name": "posts-detail", "lookup_field": "link"},
+            "user": {"view_name": "user-detail", "lookup_field": "username", "read_only": True},
         }
         
 
@@ -68,9 +68,9 @@ class PostReactionsSerializer(serializers.HyperlinkedModelSerializer):
         model = PostReactions
         fields = ['url','post','user', 'reaction']
         extra_kwargs = {
-            "url": {"view_name": "v1:postreactions-detail"},
-            "post": {"view_name": "v1:posts-detail", "lookup_field": "link"},
-            "user": {"view_name": "v1:user-detail", "lookup_field": "username", "read_only": True},
+            "url": {"view_name": "postreactions-detail"},
+            "post": {"view_name": "posts-detail", "lookup_field": "link"},
+            "user": {"view_name": "user-detail", "lookup_field": "username", "read_only": True},
         }        
 
 
@@ -80,9 +80,9 @@ class CommentReactionsSerializer(serializers.HyperlinkedModelSerializer):
         model = CommentReactions
         fields = ['url','comment','user', 'reaction']
         extra_kwargs = {
-            "url": {"view_name": "v1:commentreactions-detail"},
-            "comment": {"view_name": "v1:comments-detail", "lookup_field": "pk"},
-            "user": {"view_name": "v1:user-detail", "lookup_field": "username", "read_only": True},
+            "url": {"view_name": "commentreactions-detail"},
+            "comment": {"view_name": "comments-detail", "lookup_field": "pk"},
+            "user": {"view_name": "user-detail", "lookup_field": "username", "read_only": True},
         }
         
         
@@ -91,8 +91,8 @@ class SavedPostSerializer(serializers.HyperlinkedModelSerializer):
         model = SavedPost
         fields = ['url', 'user', 'post']
         extra_kwargs = {
-            "url": {"view_name": "v1:savedpost-detail", "lookup_field": "pk"},
-            "user": {"view_name": "v1:user-detail", "lookup_field": "username", "read_only": True},
-            "post": {"view_name": "v1:posts-detail", "lookup_field": "link"},   
+            "url": {"view_name": "savedpost-detail", "lookup_field": "pk"},
+            "user": {"view_name": "user-detail", "lookup_field": "username", "read_only": True},
+            "post": {"view_name": "posts-detail", "lookup_field": "link"},   
         }
         

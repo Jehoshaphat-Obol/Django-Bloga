@@ -15,7 +15,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
             'password': {'write_only': True},
             'email': {'write_only': True},
             'old_password': {'write_only': True, 'required': False},
-            'url': {'view_name': "v1:user-detail", "lookup_field": "username"}
+            'url': {'view_name': "user-detail", "lookup_field": "username"}
         }
 
     def create(self, validated_data):
@@ -56,7 +56,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         model = Group
         fields = ["url",'name']
         extra_kwargs = {
-            "url": {"view_name": "v1:group-detail", "lookup_field": "name"}
+            "url": {"view_name": "group-detail", "lookup_field": "name"}
         }
 
 
@@ -66,10 +66,10 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         model = Profile
         fields = ['url', 'user', 'bio', 'dp', 'follows', 'followers']
         extra_kwargs = {
-            'url': {'view_name': 'v1:profile-detail', 'lookup_field':"pk",},
-            'user': {'view_name': 'v1:user-detail', 'lookup_field':"username", 'read_only': True},
-            'follows': {'view_name': 'v1:user-detail', 'lookup_field':"username", 'queryset': User.objects.all(), 'many': True},
-            'followers': {'view_name': 'v1:user-detail', 'lookup_field':"username", 'read_only': True, 'many': True},
+            'url': {'view_name': 'profile-detail', 'lookup_field':"pk",},
+            'user': {'view_name': 'user-detail', 'lookup_field':"username", 'read_only': True},
+            'follows': {'view_name': 'user-detail', 'lookup_field':"username", 'queryset': User.objects.all(), 'many': True},
+            'followers': {'view_name': 'user-detail', 'lookup_field':"username", 'read_only': True, 'many': True},
             'dp': {'required': False}
         }
 
