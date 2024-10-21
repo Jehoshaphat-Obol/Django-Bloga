@@ -56,10 +56,7 @@ class SignUpForm(UserCreationForm):
         """
         
         user = super(SignUpForm, self).save(commit=False)
-        email = self.cleaned_data['email']
-        first_name = self.cleaned_data['first_name']
-        last_name = self.cleaned_data['last_name']
-        
+
         if commit:
             user.save()
         
@@ -136,12 +133,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['bio', 'dp']
-        
-    # initialize the email with the old email
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['email'].initial = self.instance.user.email
-        
+         
     def clean_email(self):
         email = self.cleaned_data.get('email')
         
@@ -160,6 +152,9 @@ class ProfileForm(forms.ModelForm):
         password2 = cleaned_data.get('password2')
         password = cleaned_data.get('password')
         
+        if (password1 or password2) and not password:
+            raise forms.ValidationError("Fill required fields to change password")
+        
         # if user entered old password validate the password change
         if password:
             if not self.instance.user.check_password(password):
@@ -168,6 +163,7 @@ class ProfileForm(forms.ModelForm):
                 self.add_error('password2', "Password Mismatch")
             if not password1:
                 self.add_error('password1', "New Password can not be empty")
+        
                 
         return cleaned_data
     

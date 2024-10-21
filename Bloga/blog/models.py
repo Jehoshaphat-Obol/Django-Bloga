@@ -65,6 +65,8 @@ class Posts(models.Model):
         # set publish to now when ever the status is changed from draft to published
         if not Posts.published.filter(link=self.link).exists() and self.status == "PB":
             self.publish = timezone.now()
+        else:
+            self.publish = None
         
         if update:
             super().save(*args, **kwargs)
@@ -169,6 +171,9 @@ class SavedPost(models.Model):
         
     def save(self, *args,**kwargs):
         if self.post.status == "DF":
+            return
+        
+        if SavedPost.objects.filter(user=self.user, post=self.post).exists():
             return
         
         super().save(*args, **kwargs)
