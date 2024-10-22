@@ -164,13 +164,19 @@ class CommentReactionsModelTest(TestCase):
     def setUpTestData(cls):
         user = User.objects.create(username="testuser", email="testuser@email.com",password="iamgroot")
         
-        Posts.objects.create(title="post1", content="hello world", author=user, status = "DF")
-        Posts.objects.create(title="post1", content="hello world", author=user, status = "PB")
+        draft = Posts.objects.create(title="post1", content="hello world", author=user, status = "DF")
+        published = Posts.objects.create(title="post1", content="hello world", author=user, status = "PB")
+        published = Posts.objects.create(title="post1", content="hello world", author=user, status = "PB")
     
         posts = Posts.objects.all()        
         for post in posts:
             Comments.objects.create(user=user, post=post, content="I love this post")
-           
+        
+        # unpublisha post with comments
+        published.status="DF"
+        published.save()
+        draft.status = "PB"
+        draft.save()
         
     def test_user_can_react_to_comments_in_published_posts_only(self):
         comments = Comments.objects.all()
@@ -187,16 +193,16 @@ class CommentReactionsModelTest(TestCase):
         
     def test_user_can_react_to_a_comment_only_once(self):
         comments = Comments.objects.all()
+        comments = [comment for comment in comments if comment.post.status == "PB"]
         user = User.objects.get(username="testuser")
         
         for comment in comments:
             CommentReactions.objects.create(user=user, comment=comment)
             CommentReactions.objects.create(user=user, comment=comment)
             
-        comments = Comments.objects.all()
         reactions = CommentReactions.objects.all()
         
-        self.assertEqual(comments.count(), reactions.count())
+        self.assertEqual(len(comments), reactions.count())
 
 
 class SavedPostModelTest(TestCase):
