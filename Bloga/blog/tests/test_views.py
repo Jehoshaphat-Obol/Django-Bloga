@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 
 class SignInViewTest(TestCase):
     @classmethod
@@ -62,5 +63,29 @@ class SignUpViewTest(TestCase):
         response = self.client.post(reverse("authentication:sign_up"), data)
         self.assertEqual(response.status_code, 200)
         
+        
+class SignOutViewTest(TestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username="testuser",
+            password='iamgroot'
+        )
+        
+    def test_sign_out_view_deauthenticates_and_redirects_to_sign_in(self):
+        # login a user
+        self.client.login(username=self.user.username, password='iamgroot')
+        
+        # check user authenticity before sign out
+        self.assertTrue(authenticate(username=self.user.username, password='iamgroot'))
+        
+        # sign out the user
+        response = self.client.get(reverse('authentication:sign_out'))
+        
+        # test redirect
+        self.assertRedirects(response, reverse("authentication:sign_in"))
+        
+        # test deauthentication
+        response = self.client.get(reverse('blog:user_edit', kwargs={"username": self.user.username}))
+        self.assertRedirects(response, reverse('authentication:sign_in') + f"?next={reverse("blog:user_edit", kwargs={"username": "testuser"})}")
         
         
