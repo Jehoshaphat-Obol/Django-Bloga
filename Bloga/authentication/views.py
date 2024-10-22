@@ -64,6 +64,7 @@ def sign_in_view(request):
         "form": form,
     }
     return render(request, 'authentication/signin.html', context)
+
     
 def sign_out_view(request):
     """A function based view for signing users out

@@ -17,7 +17,6 @@ class SignInViewTest(TestCase):
         response = self.client.post(reverse("authentication:sign_in"), data={"username": "testuser", "password": "iamgroot"})
         self.assertRedirects(response, reverse("blog:home"), 302, 200)
         
-        
     def test_invalid_login(self):
         response = self.client.post(reverse("authentication:sign_in"), data={"username": "testuser", "password": "iamgrooty"})
         self.assertEqual(response.status_code, 200)
@@ -31,4 +30,37 @@ class SignInViewTest(TestCase):
         
         response = self.client.post(url, data)
         self.assertRedirects(response, reverse("blog:write"), 302, 200)
+
+
+class SignUpViewTest(TestCase):
+    def test_view_url_accessible_by_name(self):
+        response = self.client.get(reverse('authentication:sign_up'))
+        self.assertEqual(response.status_code, 200)
+        
+    def test_successful_sign_up(self):
+        data = {
+            "username": "testuser",
+            "first_name": "test",
+            "last_name": "user",
+            "email": "testuser@email.com",
+            "password1": "iamgroot",
+            "password2": "iamgroot", 
+        }
+        
+        response = self.client.post(reverse("authentication:sign_up"), data)
+        self.assertRedirects(response, reverse("blog:home"), 302, 200)
+        
+    def test_unsuccessful_sign_up(self):
+        data = {
+            "first_name": "test",
+            "last_name": "user",
+            "email": "testuser@email.com",
+            "password1": "iamgroot",
+            "password2": "iamgrooty", 
+        }
+        
+        response = self.client.post(reverse("authentication:sign_up"), data)
+        self.assertEqual(response.status_code, 200)
+        
+        
         
