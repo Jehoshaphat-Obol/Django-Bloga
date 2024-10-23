@@ -112,7 +112,7 @@ def post_edit(request, link):
             return redirect('blog:post', link=link)
         
         else:
-            messages.error(request, ", ".join(form.error_messages))
+            messages.error(request, form.errors.as_text())
             
     context = {
         "user": user,
