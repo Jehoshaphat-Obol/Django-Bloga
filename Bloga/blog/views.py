@@ -238,14 +238,12 @@ def tag(request, name):
 
 
 def user_list(request):
-    users = User.objects.exclude(is_superuser=True).exclude(is_active=False)
+    users = User.objects.exclude(is_active=False)
     user = request.user
-    tags = Tag.objects.all()
     
     context = {
         "users": users,
         "user": user if user.is_authenticated else None,
-        "tags": tags,
     }
     
     return render(request, 'blog/users.html', context)
@@ -258,13 +256,11 @@ def user_following(request, username):
         username=username,
     )
     users = user.profile.follows.all()
-    tags = Tag.objects.all()
     
     user = request.user
     context = {
         "users": users,
         "user": user if user.is_authenticated else None,
-        "tags": tags,
     }
     
     return render(request, 'blog/users.html', context)
@@ -278,13 +274,11 @@ def user_followers(request, username):
     )
     
     users = user.profile.followers.all()
-    tags = Tag.objects.all()
     
     user = request.user
     context = {
         "users": users,
         "user": user if user.is_authenticated else None,
-        "tags": tags,
     }
     
     return render(request, 'blog/users.html', context)
@@ -317,15 +311,12 @@ def user_edit(request, username):
         
         if form.is_valid():
             form.save()
-            
             if form.cleaned_data.get('password1'):
                 update_session_auth_hash(request, request.user)
-
             return redirect('blog:user_edit', username = user.username)
         
         error_messages = form.errors.as_text()
         messages.error(request, error_messages)
-        # return redirect('blog:user_edit', username = user.username)
         
     context = {
         "user": user,
@@ -415,7 +406,6 @@ def user_follow(request, username):
     user = get_object_or_404(
         User,
         username = username,
-        is_superuser = False
     )
     
     if user == request.user:
@@ -472,7 +462,7 @@ def write(request):
             if tags:
                 tags = tags.split(",")
                 for tag in tags:
-                    tag = tag.lower()
+                    tag = tag.lower().strip()
                     tag, created = Tag.objects.get_or_create(name=tag)
                     
                     post.tags.add(tag)
@@ -487,7 +477,7 @@ def write(request):
             return redirect('blog:home')
         
         else:
-            messages.error(request, ", ".join(form.error_messages))
+            messages.error(request, form.errors.as_text())
             
     context = {
         "user": user,
