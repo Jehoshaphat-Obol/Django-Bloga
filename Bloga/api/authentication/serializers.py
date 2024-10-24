@@ -42,10 +42,8 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         if old_password:
             if not check_password(old_password, instance.password):
                 raise serializers.ValidationError({'old_password': 'Old password is incorrect.'})
-
-        # If new password is provided, set the new password
-        if new_password:
-            instance.set_password(new_password)
+            elif new_password:
+                instance.set_password(new_password)
         
         instance.save()
         return instance
@@ -84,13 +82,16 @@ class ProfileSerializer(serializers.HyperlinkedModelSerializer):
         
         # Update the follows field if it's provided
         if follows is not None:
-            instance.follows.set(follows)
             # Sync the followers field for other users
             for user in follows:
-                user.profile.followers.add(instance.user)
+                profile, created  = Profile.objects.get_or_create(user=user)
+                instance.follow(profile)
+                
+
             for user in instance.follows.all():
+                profile, created  = Profile.objects.get_or_create(user=user)
                 if user not in follows:
-                    user.profile.followers.remove(instance.user)
+                    instance.unfollow(profile)
         
         instance.bio = validated_data.get('bio', instance.bio)
         instance.dp = validated_data.get('dp', instance.dp)

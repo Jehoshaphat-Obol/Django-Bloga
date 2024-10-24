@@ -20,7 +20,7 @@ class UserListView(ListCreateAPIView):
     """
     API V1 endpoint for users
     """
-    queryset = User.objects.all()
+    queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]    
     
@@ -77,10 +77,6 @@ class ProfileDetailView(RetrieveUpdateAPIView):
     def perform_update(self, serializer):
         profile = self.get_object()
 
-        # Only allow the owner to update the profile
-        if profile.user != self.request.user:
-            raise PermissionDenied("You do not have permission to update this profile.")
-        
         # Call the serializer's update method
         serializer.save()
         
