@@ -1,0 +1,13 @@
+[run]
+omit =
+    wsgi.py
+    asgi.py
+    manage.py
+    */tests/*
+    */migrations/*
+    */__init__.py
+
+[report]
+exclude_lines =
+    # Have fun
+    if __name__ == '__main__': pass

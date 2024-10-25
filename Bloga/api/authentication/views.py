@@ -59,7 +59,7 @@ class ProfileListView(ListCreateAPIView):
     """
     API v1 endpoint for profiles
     """
-    queryset = Profile.objects.all()
+    queryset = Profile.objects.all().order_by('id')
     serializer_class = ProfileSerializer
     permission_classes = [permissions.IsAuthenticated, HasProfileorCanCreate]
     lookup_field = 'pk'
@@ -69,7 +69,7 @@ class ProfileListView(ListCreateAPIView):
 
 
 class ProfileDetailView(RetrieveUpdateAPIView):
-    queryset = Profile.objects.all()
+    queryset = Profile.objects.all().order_by('id')
     serializer_class = ProfileSerializer
     permission_classes = [permissions.IsAuthenticated, IsProfileOwnerOrReadOnly]
     lookup_field = 'pk'

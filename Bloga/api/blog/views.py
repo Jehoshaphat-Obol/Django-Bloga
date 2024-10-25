@@ -1,4 +1,4 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, RetrieveDestroyAPIView
 from rest_framework import permissions
 from blog.models import (
     Posts, Comments, PostReactions, CommentReactions,
@@ -19,7 +19,7 @@ class PostsListView(ListCreateAPIView):
     """
     API v1 endpoint for Posts
     """
-    queryset = Posts.objects.all()
+    queryset = Posts.objects.all().order_by('-publish')
     serializer_class = PostsSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     lookup_field = 'link'
@@ -32,9 +32,9 @@ class PostsListView(ListCreateAPIView):
     def get_queryset(self):
         user = self.request.user
         if not user.is_authenticated:
-            self.queryset = Posts.published.all()
+            self.queryset = Posts.published.all().order_by('-publish')
         else:
-             self.queryset = Posts.objects.filter(Q(status="PB") | Q(status='DF', author=user)).all()
+             self.queryset = Posts.objects.filter(Q(status="PB") | Q(status='DF', author=user)).all().order_by('-publish')
         return self.queryset
        
     
@@ -94,7 +94,7 @@ class PostReactionsListView(ListCreateAPIView):
         return super().perform_create(serializer)    
 
 
-class PostReactionsDetailView(RetrieveUpdateDestroyAPIView):
+class PostReactionsDetailView(RetrieveDestroyAPIView):
     """
     API v1 endpoint for post reactions instances
     Note: It only creates if the post is published
@@ -121,7 +121,7 @@ class CommentReactionsListView(ListCreateAPIView):
         return super().perform_create(serializer)    
 
 
-class CommentReactionsDetailView(RetrieveUpdateDestroyAPIView):
+class CommentReactionsDetailView(RetrieveDestroyAPIView):
     """
     API v1 endpoint for post reactions instances
     Note: It only creates if the post is published
@@ -153,7 +153,7 @@ class SavedPostListView(ListCreateAPIView):
     
     
 
-class SavedPostDetailView(RetrieveUpdateDestroyAPIView):
+class SavedPostDetailView(RetrieveDestroyAPIView):
     """
     API v1 endpoint for the saved post instances
     """
