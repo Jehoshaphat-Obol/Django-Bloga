@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'taggit',
     'rest_framework',
     "knox",
+    "drf_yasg",
 ]
 
 REST_FRAMEWORK = {
