@@ -1,0 +1,191 @@
+ERROR 2024-11-05 23:38:03,884 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS."), <traceback object at 0x7e515634d980>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+ERROR 2024-11-05 23:38:09,889 log Internal Server Error: / None
+ERROR 2024-11-05 23:38:16,015 basehttp "GET / HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:38:16,047 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS."), <traceback object at 0x7e51563ff100>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+ERROR 2024-11-05 23:38:16,048 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS."), <traceback object at 0x7e51563fc6c0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+ERROR 2024-11-05 23:38:28,610 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-05 23:38:34,759 log Internal Server Error: /static/css/style.css None
+ERROR 2024-11-05 23:38:39,779 basehttp "GET /static/js/index.js HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:38:45,721 basehttp "GET /static/css/style.css HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:38:51,357 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS."), <traceback object at 0x7e51563ff540>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+ERROR 2024-11-05 23:38:51,381 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS."), <traceback object at 0x7e51563fdd80>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+ERROR 2024-11-05 23:39:02,095 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-05 23:39:08,553 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-05 23:40:54,693 log Internal Server Error: /static/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg None
+ERROR 2024-11-05 23:40:54,696 log Internal Server Error: /static/css/style.css None
+ERROR 2024-11-05 23:40:54,700 log Internal Server Error: /static/media/uploads/dp/37982c00-a7a6-4c65-b6d4-7383c0ad4b4b.png None
+ERROR 2024-11-05 23:40:54,703 log Internal Server Error: /static/media/uploads/dp/d1cfa1d7-2797-4aea-8807-19b65ee4cb7e.png None
+ERROR 2024-11-05 23:40:54,720 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-05 23:41:01,399 basehttp "GET /static/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:41:04,487 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-05 23:41:06,994 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-05 23:41:32,893 log Internal Server Error: /static/css/style.css None
+ERROR 2024-11-05 23:41:32,897 log Internal Server Error: /static/media/uploads/dp/d1cfa1d7-2797-4aea-8807-19b65ee4cb7e.png None
+ERROR 2024-11-05 23:41:32,900 log Internal Server Error: /static/media/uploads/dp/37982c00-a7a6-4c65-b6d4-7383c0ad4b4b.png None
+ERROR 2024-11-05 23:41:32,904 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-05 23:41:32,904 log Internal Server Error: /static/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg None
+ERROR 2024-11-05 23:41:51,566 basehttp "GET /static/css/style.css HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:41:57,820 basehttp "GET /static/media/uploads/dp/d1cfa1d7-2797-4aea-8807-19b65ee4cb7e.png HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:42:03,256 basehttp "GET /static/media/uploads/dp/37982c00-a7a6-4c65-b6d4-7383c0ad4b4b.png HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:42:09,186 basehttp "GET /static/js/index.js HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:42:09,194 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-05 23:42:15,946 basehttp "GET /static/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:42:15,957 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-05 23:42:39,958 log Internal Server Error: /static/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg None
+ERROR 2024-11-05 23:42:39,961 log Internal Server Error: /static/css/style.css None
+ERROR 2024-11-05 23:42:39,965 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-05 23:42:39,969 log Internal Server Error: /static/media/uploads/dp/37982c00-a7a6-4c65-b6d4-7383c0ad4b4b.png None
+ERROR 2024-11-05 23:42:39,973 log Internal Server Error: /static/media/uploads/dp/d1cfa1d7-2797-4aea-8807-19b65ee4cb7e.png None
+ERROR 2024-11-05 23:42:46,254 basehttp "GET /static/js/index.js HTTP/1.1" 500 2751 None
+ERROR 2024-11-05 23:42:52,495 log Internal Server Error: /static/img/favicon.ico None
+ERROR 2024-11-05 23:52:01,192 log Internal Server Error: /api/ (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'posts-list' not found. 'posts-list' is not a valid view function or pattern name."), <traceback object at 0x7e558d769f40>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/views.py", line 17, in root
+    "post": reverse("posts-list", request=request),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'posts-list' not found. 'posts-list' is not a valid view function or pattern name.
+ERROR 2024-11-05 23:52:08,320 basehttp "GET /api/ HTTP/1.1" 500 127313 None
+ERROR 2024-11-05 23:52:32,435 log Internal Server Error: /api/ (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'posts-list' not found. 'posts-list' is not a valid view function or pattern name."), <traceback object at 0x7dfa46290e80>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/views.py", line 17, in root
+    "post": reverse("posts-list", request=request),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/reverse.py", line 47, in reverse
+    url = _reverse(viewname, args, kwargs, request, format, **extra)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/reverse.py", line 60, in _reverse
+    url = django_reverse(viewname, args=args, kwargs=kwargs, **extra)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'posts-list' not found. 'posts-list' is not a valid view function or pattern name.
+ERROR 2024-11-05 23:52:38,528 basehttp "GET /api/ HTTP/1.1" 500 127313 None
