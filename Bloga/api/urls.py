@@ -8,9 +8,9 @@ from knox import views as knox_views
 urlpatterns = [
     path("",views.root, name="root"),
     path('auth/', include('rest_framework.urls', namespace='rest_framework')),    
-    path("api/login/", auth_views.LoginAPI.as_view(), name='login'),
-    path('api/logout/', knox_views.LogoutView.as_view(), name='logout'),
-    path('api/logoutall/', knox_views.LogoutAllView.as_view(), name='logoutall'),
+    path("login/", auth_views.LoginAPI.as_view(), name='login'),
+    path('logout/', knox_views.LogoutView.as_view(), name='logout'),
+    path('logoutall/', knox_views.LogoutAllView.as_view(), name='logoutall'),
     path("user/", auth_views.UserListView.as_view(), name="user-list"),
     path("user/<str:username>/", auth_views.UserDetailView.as_view(), name="user-detail"),
     path('group/', auth_views.GroupListView.as_view(), name="group-list"),

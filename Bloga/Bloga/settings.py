@@ -27,10 +27,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-p%j5=mm2q8t17w)^=7%kwhv!vwt$+9)f7)q#ub6&a8+ewbgsjc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    # "10.42.0.1",
+    "localhost",
 ]
 
 
@@ -172,3 +172,64 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Extra Settings
 LOGIN_REDIRECT_URL = "/auth/"
 LOGIN_URL = "/auth/"
+
+
+# settings.py
+
+import os
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message} {exc_info}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'ERROR',  # Set to ERROR to log only errors
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'file': {
+            'level': 'ERROR',  # Only log errors
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'error.log'),  # Log file location
+            'formatter': 'verbose',
+        },
+        # Optional: Email errors to admins
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file', 'mail_admins'],  # You can add 'mail_admins' here if configured
+            'level': 'ERROR',  # Set to ERROR to log only error messages
+            'propagate': True,
+        },
+    },
+}
+
+
+# settings.py
+
+# Define admin email addresses
+ADMINS = [
+    ('Jehoshaphat Obol', 'jehoshaphat.obol@outlook.com'),
+]
+
+# Email backend settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')

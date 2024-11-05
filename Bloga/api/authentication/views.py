@@ -88,5 +88,4 @@ class LoginAPI(LoginView):
         serializer = AuthTokenSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
-        login(request, user)
         return super().post(request, *args, **kwargs)
