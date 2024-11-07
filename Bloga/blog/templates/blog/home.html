@@ -42,7 +42,7 @@
             </div>
             <div class="relative mt-8 flex items-center gap-x-4">
                 {% if post.author.profile.dp %}
-                    <img src="{% static post.author.profile.dp.url %}" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+                    <img src="{{ post.author.profile.dp.url }}" alt="" class="h-10 w-10 rounded-full bg-gray-50">
                 {% else %}
                     <img src="{% static 'img/profile.png' %}" alt="" class="h-10 w-10 rounded-full bg-gray-50">
                 {% endif %}

@@ -189,3 +189,329 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'posts-list' not found. 'posts-list' is not a valid view function or pattern name.
 ERROR 2024-11-05 23:52:38,528 basehttp "GET /api/ HTTP/1.1" 500 127313 None
+ERROR 2024-11-06 10:53:20,273 exception Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS."), <traceback object at 0x74a77bc3b600>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+ERROR 2024-11-06 10:53:25,366 exception Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS."), <traceback object at 0x74a77bc3b8c0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '0.0.0.0:8000'. You may need to add '0.0.0.0' to ALLOWED_HOSTS.
+ERROR 2024-11-06 10:53:26,895 log Internal Server Error: / None
+ERROR 2024-11-06 10:53:30,105 log Internal Server Error: / None
+ERROR 2024-11-06 10:54:17,014 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-06 10:54:20,373 log Internal Server Error: /static/css/style.css None
+ERROR 2024-11-06 10:54:20,506 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-06 10:54:21,398 log Internal Server Error: /static/media/uploads/dp/d1cfa1d7-2797-4aea-8807-19b65ee4cb7e.png None
+ERROR 2024-11-06 10:54:21,689 log Internal Server Error: /static/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg None
+ERROR 2024-11-06 10:54:24,536 log Internal Server Error: /static/media/uploads/dp/37982c00-a7a6-4c65-b6d4-7383c0ad4b4b.png None
+ERROR 2024-11-06 10:54:24,816 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-06 10:54:30,909 log Internal Server Error: /static/img/favicon.ico None
+ERROR 2024-11-06 10:58:42,093 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-06 10:58:42,096 log Internal Server Error: /static/css/style.css None
+ERROR 2024-11-06 10:58:44,242 log Internal Server Error: /static/media/uploads/dp/d1cfa1d7-2797-4aea-8807-19b65ee4cb7e.png None
+ERROR 2024-11-06 10:58:44,243 log Internal Server Error: /static/css/style.css None
+ERROR 2024-11-06 10:58:46,593 log Internal Server Error: /static/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg None
+ERROR 2024-11-06 10:58:47,000 log Internal Server Error: /static/media/uploads/dp/37982c00-a7a6-4c65-b6d4-7383c0ad4b4b.png None
+ERROR 2024-11-06 10:58:48,454 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-06 10:58:53,769 log Internal Server Error: /static/js/index.js None
+ERROR 2024-11-06 10:58:53,816 log Internal Server Error: /static/img/favicon.ico None
+ERROR 2024-11-06 15:12:36,435 exception Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS."), <traceback object at 0x7ed0a6bad9c0>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS.
+ERROR 2024-11-06 15:12:42,087 log Internal Server Error: / None
+ERROR 2024-11-06 15:13:59,785 exception Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS."), <traceback object at 0x7ed0a6badb00>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS.
+ERROR 2024-11-06 15:14:04,634 log Internal Server Error: / None
+ERROR 2024-11-06 15:14:13,792 exception Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS."), <traceback object at 0x7ed0a67ee7c0>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS.
+ERROR 2024-11-06 15:14:18,717 log Internal Server Error: / None
+ERROR 2024-11-06 15:15:14,743 exception Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS."), <traceback object at 0x7ed0a6bad840>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS.
+ERROR 2024-11-06 15:15:19,801 log Internal Server Error: / None
+ERROR 2024-11-06 15:16:20,925 exception Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS."), <traceback object at 0x7ed0a67ead40>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS.
+ERROR 2024-11-06 15:16:25,595 log Internal Server Error: / None
+ERROR 2024-11-06 15:19:37,955 exception Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS."), <traceback object at 0x7ed0a67eaec0>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'blog'. You may need to add 'blog' to ALLOWED_HOSTS.
+ERROR 2024-11-06 15:19:43,330 log Internal Server Error: / None
+ERROR 2024-11-06 15:34:06,712 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-06 15:34:12,293 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-07 16:33:59,666 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x78cf8ffcc200>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x78cf90108780>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
+    instance, token = self.create_token()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 43, in create_token
+    return get_token_model().objects.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/models.py", line 27, in create
+    instance = super().create(
+               ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x78cf8ffcc200>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-07 16:35:40,731 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-07 16:35:41,607 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-07 16:36:12,637 log Internal Server Error: /users/testuser/edit/ (<class 'PermissionError'>, PermissionError(13, 'Permission denied'), <traceback object at 0x78cf90404440>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/blog/views.py", line 313, in user_edit
+    form.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/authentication/forms.py", line 196, in save
+    profile.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 1124, in _save_table
+    (getattr(self, f.attname) if raw else f.pre_save(self, False)),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 100, in _save
+    os.makedirs(directory, exist_ok=True)
+  File "<frozen os>", line 215, in makedirs
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/home/jehoshaphat/Documents/Tunga.io/Django/uploads/media/uploads'
+ERROR 2024-11-07 17:13:06,047 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7bd7741d6240>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7bd7741e62c0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
+    instance, token = self.create_token()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 43, in create_token
+    return get_token_model().objects.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/models.py", line 27, in create
+    instance = super().create(
+               ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7bd7741d6240>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-07 17:14:52,687 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-07 17:14:53,493 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-07 17:23:01,597 log Internal Server Error: /apilogin/ None
+ERROR 2024-11-07 17:23:02,257 log Internal Server Error: /apilogin/ None
+ERROR 2024-11-07 17:24:54,077 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-07 17:24:54,887 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-07 17:29:33,433 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c8c1fe31940>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7c8c20056800>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
+    instance, token = self.create_token()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 43, in create_token
+    return get_token_model().objects.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/models.py", line 27, in create
+    instance = super().create(
+               ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c8c1fe31940>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-07 17:31:27,068 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-07 17:31:27,846 log Internal Server Error: /posts/title-0/ None

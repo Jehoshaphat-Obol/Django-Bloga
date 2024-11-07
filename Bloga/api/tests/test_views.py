@@ -213,6 +213,7 @@ class LoginAPITest(APITestCase):
             'username': self.username,
             'password': self.password
         }
+        print(self.login_url)
         response = self.client.post(self.login_url, data, format='json')
 
         # Check if the login was successful and Knox token is returned

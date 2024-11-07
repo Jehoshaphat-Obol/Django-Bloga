@@ -1,0 +1,29 @@
+{
+    "name": "Bloga",
+    "short_name": "Bloga",
+    "description": "Read and Share your knowledge",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#00684A",
+    "theme_color": "#00ED64",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/static/img/logo.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/static/img/logo.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "lang": "en-US",
+    "scope": "/",
+    "categories": [
+      "social",
+      "productivity",
+      "technology"
+    ]
+  }

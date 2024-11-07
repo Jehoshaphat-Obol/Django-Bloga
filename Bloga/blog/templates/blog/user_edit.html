@@ -47,7 +47,7 @@
                         class="focus:outline-none group ring-secondary focus:ring-4 focus:ring-secondary focus:ring-offset-4 focus:ring-offset-white rounded-full">
                         {%if user.profile.dp %}
                             <img class="h-24 w-24 rounded-full"
-                            src="{% static user.profile.dp.url %}"
+                            src="{{ user.profile.dp.url }}"
                             alt="" id="profilePicture">
                         {% else %}
                             <img class="h-24 w-24 rounded-full"
