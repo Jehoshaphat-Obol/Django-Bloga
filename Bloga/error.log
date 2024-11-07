@@ -515,3 +515,6 @@ Traceback (most recent call last):
 ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c8c1fe31940>": "AuthToken.user" must be a "User" instance.
 ERROR 2024-11-07 17:31:27,068 log Internal Server Error: /posts/alksdlas/ None
 ERROR 2024-11-07 17:31:27,846 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-07 20:48:57,839 log Internal Server Error: /users/jehoshaphat/static/service-worker.js None
+ERROR 2024-11-07 20:49:12,365 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-07 20:57:45,861 log Internal Server Error: /auth/static/service-worker.js None

@@ -2,6 +2,7 @@ asgiref==3.8.1
 coverage==7.6.3
 Django==5.1.1
 django-environ==0.11.2
+django-redis==5.4.0
 django-rest-knox==5.0.2
 django-taggit==6.1.0
 django-test-plus==2.2.4
@@ -14,6 +15,7 @@ packaging==24.1
 pillow==10.4.0
 pytz==2024.2
 PyYAML==6.0.2
+redis==5.2.0
 sqlparse==0.5.1
 tblib==3.0.0
 uritemplate==4.1.1

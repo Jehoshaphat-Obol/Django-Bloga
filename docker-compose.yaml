@@ -14,12 +14,17 @@ services:
                 ipv4_address: 192.168.93.2
         depends_on:
             - blog1
+            - media_store
+            - session_store
     blog1:
         build: ./Bloga
         container_name: blog1_server_container
         volumes:
             - ./Bloga:/app
             - media:/app/media
+        depends_on:
+            - session_store
+            - media_store
         networks:
             bloga:
                 ipv4_address: 192.168.93.3
@@ -33,6 +38,12 @@ services:
             bloga:
                 ipv4_address: 192.168.93.4
 
+    session_store:
+        build: './session store'
+        container_name: session_store
+        networks:
+            bloga:
+                ipv4_address: 192.168.93.5
 
 volumes:
     media:
