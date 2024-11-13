@@ -9,10 +9,12 @@ RUN rm -rf /var/lib/apt/lists/*
     
 RUN ln -s /bin/python3 /bin/python    
 
-# Create and activate virtual environment, then upgrade pip
-# RUN python -m venv /app/env && \
-#     . /app/env/bin/activate && \
 RUN pip install --upgrade pip
+
+# Update the package list and install libpq-dev
+RUN apt-get update && apt-get install -y libpq-dev postgresql-client
+
+
 
 WORKDIR /app
 
@@ -23,6 +25,7 @@ COPY ./requirements.txt /app/requirements.txt
 RUN pip --no-cache-dir install -U wheel
 
 RUN pip --no-cache-dir install -r requirements.txt
+RUN pip --no-cache-dir install psycopg2-binary
 
 # Launch the app
 COPY ./entrypoint.sh /

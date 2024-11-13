@@ -1,4 +1,4 @@
-version: "3.8"
+version: '3.8'
 
 services:
     proxy:
@@ -10,24 +10,62 @@ services:
             - ./server/nginx.conf:/etc/nginx/nginx.conf
             - ./server/static/:/static/
         networks:
-            bloga:
-                ipv4_address: 192.168.93.2
+            - bloga
         depends_on:
-            - blog1
+            - blog
             - media_store
             - session_store
-    blog1:
+            - database
+            - connection_pool
+    
+    blog:
         build: ./Bloga
-        container_name: blog1_server_container
+        deploy:
+            replicas: 6
         volumes:
             - ./Bloga:/app
             - media:/app/media
         depends_on:
             - session_store
             - media_store
+            - database
+            - connection_pool
         networks:
-            bloga:
-                ipv4_address: 192.168.93.3
+            - bloga
+    
+    api:
+        build: ./Bloga
+        deploy:
+            replicas: 4
+        volumes:
+            - ./Bloga:/app
+            - media:/app/media
+        depends_on:
+            - session_store
+            - media_store
+            - database
+            - connection_pool
+        networks:
+            - bloga
+        environment:
+            - PORT=4444
+ 
+    admin:
+        build: ./Bloga
+        deploy:
+            replicas: 2
+        volumes:
+            - ./Bloga:/app
+            - media:/app/media
+        depends_on:
+            - session_store
+            - media_store
+            - database
+            - connection_pool
+        networks:
+            - bloga
+        environment:
+            - PORT=5555
 
     media_store:
         build: ./uploads
@@ -35,23 +73,65 @@ services:
         volumes:
             - media:/usr/share/nginx/html/media/
         networks:
-            bloga:
-                ipv4_address: 192.168.93.4
+            - bloga
+        logging:
+            driver: "none"
 
     session_store:
         build: './session store'
         container_name: session_store
         networks:
-            bloga:
-                ipv4_address: 192.168.93.5
+            - bloga
+        depends_on:
+            - database
+        logging:
+            driver: "none"
+
+    connection_pool:
+        build: './connection pool'
+        container_name: connection_pool
+        secrets:
+            - pgbouncer_userlist
+        volumes:
+            - ./connection pool/pgbouncer.ini:/etc/pgbouncer/pgbouncer.ini
+        environment:
+            DB_HOST: database
+        networks:
+            - bloga
+        depends_on:
+            - database
+        logging:
+            driver: "none"
+
+    database:
+        build: './database'
+        container_name: postgres
+        environment:
+            POSTGRES_DB: Bloga
+            POSTGRES_USER: jehoshaphat
+            POSTGRES_PASSWORD: Pentatonic5464@
+
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+            - ./database/postgresql.conf:/var/lib/postgresql/data/postgresql.conf
+            - ./database/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf
+        networks:
+            - bloga
+        logging:
+            driver: "none"
+
+secrets:
+    pgbouncer_userlist:
+        file: ./pg_bouncer_secret.txt
 
 volumes:
     media:
+    postgres_data:
 
 networks:
     bloga:
         ipam:
             driver: default
             config:
-                - subnet: "192.168.93.1/24"
+                - subnet: "192.168.93.0/24"
 

@@ -122,7 +122,19 @@ MYSQLITE = {
     }
 }
 
-DATABASES = MYSQLITE
+POSTGRESQL = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': env('PG_DBNAME'),
+        'USER': env("PG_USER"),
+        'PASSWORD': env("PG_PASSWORD"),
+        'HOST': 'connection_pool',
+        'PORT': env('PG_PORT'),
+        'CONN_MAX_AGE': 0,  # Disable persistent connections for PgBouncer
+    }
+}
+
+DATABASES = POSTGRESQL
 
 
 # Password validation
@@ -249,7 +261,7 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://192.168.93.5:6379/1",  
+        "LOCATION": "redis://session_store:6379/1",  
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }

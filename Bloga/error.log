@@ -518,3 +518,105 @@ ERROR 2024-11-07 17:31:27,846 log Internal Server Error: /posts/title-0/ None
 ERROR 2024-11-07 20:48:57,839 log Internal Server Error: /users/jehoshaphat/static/service-worker.js None
 ERROR 2024-11-07 20:49:12,365 log Internal Server Error: /auth/static/service-worker.js None
 ERROR 2024-11-07 20:57:45,861 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-10 08:55:25,095 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-10 08:55:25,096 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-10 08:55:56,697 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-10 08:55:56,890 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-10 08:56:01,149 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-10 08:56:01,154 log Internal Server Error: /auth/sign-up/static/service-worker.js None
+ERROR 2024-11-10 08:57:40,836 log Internal Server Error: /auth/sign-up/static/service-worker.js None
+ERROR 2024-11-10 08:57:41,124 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-10 08:57:58,943 log Internal Server Error: /auth/sign-up/ (<class 'redis.exceptions.ConnectionError'>, ConnectionError('Error 111 connecting to 192.168.93.5:6379. Connection refused.'), <traceback object at 0x7ac1585e0d00>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django_redis/cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django_redis/cache.py", line 138, in has_key
+    return self.client.has_key(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django_redis/client/default.py", line 670, in has_key
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 192.168.93.5:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/authentication/views.py", line 21, in sign_up_view
+    login(request, user)
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/auth/__init__.py", line 126, in login
+    request.session.cycle_key()
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 432, in cycle_key
+    self.create()
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/sessions/backends/cache.py", line 55, in create
+    self._session_key = self._get_new_session_key()
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/sessions/backends/base.py", line 196, in _get_new_session_key
+    if not self.exists(session_key):
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/contrib/sessions/backends/cache.py", line 117, in exists
+    bool(session_key) and (self.cache_key_prefix + session_key) in self._cache
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/cache/backends/base.py", line 300, in __contains__
+    return self.has_key(key)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django_redis/cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "/usr/local/lib/python3.12/site-packages/django_redis/client/default.py", line 668, in has_key
+    return client.exists(key) == 1
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 1729, in exists
+    return self.execute_command("EXISTS", *names, keys=names)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 1422, in get_connection
+    connection.connect()
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 192.168.93.5:6379. Connection refused.
+ERROR 2024-11-10 08:58:06,072 log Internal Server Error: /auth/sign-up/static/service-worker.js None
+ERROR 2024-11-10 09:01:54,801 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-10 09:01:54,806 log Internal Server Error: /auth/sign-up/static/service-worker.js None
+ERROR 2024-11-10 09:02:10,409 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-10 09:02:10,411 log Internal Server Error: /auth/sign-up/static/service-worker.js None
+ERROR 2024-11-10 09:02:16,357 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-10 09:02:16,363 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-10 09:26:20,400 exception Invalid HTTP_HOST header: 'api'. You may need to add 'api' to ALLOWED_HOSTS. (<class 'django.core.exceptions.DisallowedHost'>, DisallowedHost("Invalid HTTP_HOST header: 'api'. You may need to add 'api' to ALLOWED_HOSTS."), <traceback object at 0x738bed35bcc0>)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'api'. You may need to add 'api' to ALLOWED_HOSTS.
+ERROR 2024-11-10 09:26:27,959 log Internal Server Error: /api/ None
+ERROR 2024-11-10 09:41:52,210 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-10 09:45:05,516 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-10 09:45:16,617 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-10 09:45:24,483 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-10 10:51:44,104 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-10 10:53:04,557 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-12 21:49:12,873 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-12 21:49:12,956 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-12 21:49:27,386 log Internal Server Error: /auth/static/service-worker.js None
+ERROR 2024-11-12 21:49:27,407 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-12 21:49:45,026 log Internal Server Error: /auth/sign-up/static/service-worker.js None
+ERROR 2024-11-12 21:49:45,027 log Internal Server Error: /favicon.ico None
+ERROR 2024-11-12 22:10:17,343 log Internal Server Error: /auth/sign-up/static/service-worker.js None
+ERROR 2024-11-12 22:10:17,354 log Internal Server Error: /favicon.ico None
