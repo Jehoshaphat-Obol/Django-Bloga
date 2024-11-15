@@ -8,7 +8,7 @@
 <div class="mx-auto max-w-2xl lg:mx-0">
     <div class="relative flex items-center gap-x-4">
         {% if profile.profile.dp %}
-            <img src="{% static profile.profile.dp.url%}" alt="{{profile.username}}" class="h-24 w-24 rounded-full bg-gray-50">
+            <img src="{{MEDIA_ROOT}}{{profile.profile.dp.url}}" alt="{{profile.username}}" class="h-24 w-24 rounded-full bg-gray-50">
         {% else %}
             <img src="{% static 'img/profile.png' %}" alt="{{profile.username}}" class="h-24 w-24 rounded-full bg-gray-50">
         {% endif %}
