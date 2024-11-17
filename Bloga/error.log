@@ -2052,3 +2052,1666 @@ Traceback (most recent call last):
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
     raise SuspiciousFileOperation(
 django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/d1cfa1d7-2797-4aea-8807-19b65ee4cb7e.png) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-15 13:52:49,095 exception The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static) (<class 'django.core.exceptions.SuspiciousFileOperation'>, SuspiciousFileOperation('The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)'), <traceback object at 0x7f2965420b00>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'StaticFilesPanel' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 103, in content
+    return render_to_string(self.template, self.get_stats())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 25, in real_path
+    return finders.find(self.path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 298, in find
+    result = finder.find(path, all=all)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 203, in find
+    match = self.find_in_app(app, path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 216, in find_in_app
+    if storage and storage.exists(path):
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 206, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 220, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-15 13:59:57,110 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 13:59:59,002 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:00:46,969 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:00:47,004 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:00:48,262 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:00:48,278 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:00:48,981 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:00:48,999 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:00:50,712 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:00:50,731 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:00:51,338 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:00:51,358 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:00:56,179 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:00:56,196 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:00:59,958 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:00:59,983 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:01:04,426 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:01:04,496 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:01:08,842 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:01:08,861 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:03:53,186 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:03:54,128 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:04:02,965 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:04:31,058 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:04:32,006 log Internal Server Error: /static/js/manifest.json None
+ERROR 2024-11-15 14:04:40,320 basehttp "GET /static/js/manifest.json HTTP/1.1" 500 2751 None
+ERROR 2024-11-15 14:05:30,872 exception The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static) (<class 'django.core.exceptions.SuspiciousFileOperation'>, SuspiciousFileOperation('The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)'), <traceback object at 0x7e2e30d43480>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'StaticFilesPanel' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 103, in content
+    return render_to_string(self.template, self.get_stats())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 25, in real_path
+    return finders.find(self.path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 298, in find
+    result = finder.find(path, all=all)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 203, in find
+    match = self.find_in_app(app, path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 216, in find_in_app
+    if storage and storage.exists(path):
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 206, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 220, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-15 14:06:02,088 exception The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static) (<class 'django.core.exceptions.SuspiciousFileOperation'>, SuspiciousFileOperation('The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)'), <traceback object at 0x7e2e30a8a9c0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'StaticFilesPanel' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 103, in content
+    return render_to_string(self.template, self.get_stats())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 25, in real_path
+    return finders.find(self.path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 298, in find
+    result = finder.find(path, all=all)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 203, in find
+    match = self.find_in_app(app, path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 216, in find_in_app
+    if storage and storage.exists(path):
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 206, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 220, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-15 14:07:44,464 exception The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static) (<class 'django.core.exceptions.SuspiciousFileOperation'>, SuspiciousFileOperation('The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)'), <traceback object at 0x7e2e30b9d6c0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'StaticFilesPanel' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 103, in content
+    return render_to_string(self.template, self.get_stats())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 25, in real_path
+    return finders.find(self.path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 298, in find
+    result = finder.find(path, all=all)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 203, in find
+    match = self.find_in_app(app, path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 216, in find_in_app
+    if storage and storage.exists(path):
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 206, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 220, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-15 14:08:27,818 exception The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static) (<class 'django.core.exceptions.SuspiciousFileOperation'>, SuspiciousFileOperation('The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)'), <traceback object at 0x7e2e30ca1ec0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'StaticFilesPanel' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 103, in content
+    return render_to_string(self.template, self.get_stats())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 25, in real_path
+    return finders.find(self.path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 298, in find
+    result = finder.find(path, all=all)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 203, in find
+    match = self.find_in_app(app, path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 216, in find_in_app
+    if storage and storage.exists(path):
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 206, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 220, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-15 14:08:39,887 exception The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static) (<class 'django.core.exceptions.SuspiciousFileOperation'>, SuspiciousFileOperation('The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)'), <traceback object at 0x7e2e30b7f4c0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'StaticFilesPanel' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 103, in content
+    return render_to_string(self.template, self.get_stats())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 25, in real_path
+    return finders.find(self.path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 298, in find
+    result = finder.find(path, all=all)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 203, in find
+    match = self.find_in_app(app, path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 216, in find_in_app
+    if storage and storage.exists(path):
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 206, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 220, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-15 14:09:25,289 exception The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static) (<class 'django.core.exceptions.SuspiciousFileOperation'>, SuspiciousFileOperation('The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)'), <traceback object at 0x7e2e309b6400>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'StaticFilesPanel' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 103, in content
+    return render_to_string(self.template, self.get_stats())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 25, in real_path
+    return finders.find(self.path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 298, in find
+    result = finder.find(path, all=all)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 203, in find
+    match = self.find_in_app(app, path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 216, in find_in_app
+    if storage and storage.exists(path):
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 206, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 220, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/5cee5bc2-2f33-4e5e-9b4b-48a26fc3b4f9.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-15 14:09:58,948 exception The joined path (/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static) (<class 'django.core.exceptions.SuspiciousFileOperation'>, SuspiciousFileOperation('The joined path (/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)'), <traceback object at 0x7e2e30b77fc0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+              ~~~~~~~^^^^^
+TypeError: 'StaticFilesPanel' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/middleware.py", line 97, in __call__
+    rendered = toolbar.render_toolbar()
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/toolbar.py", line 84, in render_toolbar
+    return render_to_string("debug_toolbar/base.html", context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader_tags.py", line 210, in render
+    return template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 173, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/__init__.py", line 103, in content
+    return render_to_string(self.template, self.get_stats())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/test/utils.py", line 114, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 327, in render
+    return nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1008, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 969, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 1067, in render
+    output = self.filter_expression.resolve(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 718, in resolve
+    obj = self.var.resolve(context)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 850, in resolve
+    value = self._resolve_lookup(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 917, in _resolve_lookup
+    current = current()
+              ^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/debug_toolbar/panels/staticfiles.py", line 25, in real_path
+    return finders.find(self.path)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 298, in find
+    result = finder.find(path, all=all)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 203, in find
+    match = self.find_in_app(app, path)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/staticfiles/finders.py", line 216, in find_in_app
+    if storage and storage.exists(path):
+                   ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 206, in exists
+    return os.path.lexists(self.path(name))
+                           ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 220, in path
+    return safe_join(self.location, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/utils/_os.py", line 31, in safe_join
+    raise SuspiciousFileOperation(
+django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
+ERROR 2024-11-17 07:34:40,491 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7539a6ba7050>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7539a6d17000>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
+    instance, token = self.create_token()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 43, in create_token
+    return get_token_model().objects.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/models.py", line 27, in create
+    instance = super().create(
+               ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7539a6ba7050>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-17 07:36:38,112 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 07:36:38,952 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-17 07:37:11,880 log Internal Server Error: /users/testuser/edit/ (<class 'PermissionError'>, PermissionError(13, 'Permission denied'), <traceback object at 0x7539a756e2c0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/blog/views.py", line 313, in user_edit
+    form.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/authentication/forms.py", line 196, in save
+    profile.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 1124, in _save_table
+    (getattr(self, f.attname) if raw else f.pre_save(self, False)),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 137, in _save
+    fd = os.open(full_path, open_flags, 0o666)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/media/uploads/dp/d638de8b-4925-4e78-b539-876ef5df45db.jpg'
+ERROR 2024-11-17 08:41:07,073 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x767b336e7380>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x767b336fcf40>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
+    instance, token = self.create_token()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 43, in create_token
+    return get_token_model().objects.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/models.py", line 27, in create
+    instance = super().create(
+               ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x767b336e7380>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-17 08:43:24,025 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c0a1cba96a0>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7c0a1cba4ac0>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
+    instance, token = self.create_token()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 43, in create_token
+    return get_token_model().objects.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/models.py", line 27, in create
+    instance = super().create(
+               ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c0a1cba96a0>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-17 08:45:47,226 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x74341948aff0>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7434197d2540>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+    return super().post(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
+    instance, token = self.create_token()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 43, in create_token
+    return get_token_model().objects.create(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/models.py", line 27, in create
+    instance = super().create(
+               ^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/query.py", line 677, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x74341948aff0>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-17 08:47:42,009 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 08:47:42,880 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-17 08:48:20,272 log Internal Server Error: /users/testuser/edit/ (<class 'PermissionError'>, PermissionError(13, 'Permission denied'), <traceback object at 0x743419b02f00>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/blog/views.py", line 313, in user_edit
+    form.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/authentication/forms.py", line 196, in save
+    profile.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 1124, in _save_table
+    (getattr(self, f.attname) if raw else f.pre_save(self, False)),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 137, in _save
+    fd = os.open(full_path, open_flags, 0o666)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/media/uploads/dp/9e0ae214-b541-4cab-b297-464b3a402679.jpg'
+ERROR 2024-11-17 09:04:55,735 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 09:04:57,199 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-17 09:05:35,185 log Internal Server Error: /users/testuser/edit/ (<class 'PermissionError'>, PermissionError(13, 'Permission denied'), <traceback object at 0x799b5ed1a140>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/blog/views.py", line 313, in user_edit
+    form.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/authentication/forms.py", line 196, in save
+    profile.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 1124, in _save_table
+    (getattr(self, f.attname) if raw else f.pre_save(self, False)),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 137, in _save
+    fd = os.open(full_path, open_flags, 0o666)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/media/uploads/dp/ad12107e-df20-4f0b-b93f-5950514df119.jpg'
+ERROR 2024-11-17 09:17:26,806 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 09:17:27,609 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-17 09:17:59,548 log Internal Server Error: /users/testuser/edit/ (<class 'PermissionError'>, PermissionError(13, 'Permission denied'), <traceback object at 0x7d6caa3e8d00>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/blog/views.py", line 313, in user_edit
+    form.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/authentication/forms.py", line 196, in save
+    profile.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 1124, in _save_table
+    (getattr(self, f.attname) if raw else f.pre_save(self, False)),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 137, in _save
+    fd = os.open(full_path, open_flags, 0o666)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/media/uploads/dp/c52f6e00-b229-4cb4-876d-ddc64257a120.jpg'
+ERROR 2024-11-17 09:28:17,281 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 09:28:18,098 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-17 09:28:49,439 log Internal Server Error: /users/testuser/edit/ (<class 'PermissionError'>, PermissionError(13, 'Permission denied'), <traceback object at 0x7f58068d0140>)
+Traceback (most recent call last):
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/auth/decorators.py", line 60, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/blog/views.py", line 313, in user_edit
+    form.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/authentication/forms.py", line 196, in save
+    profile.save()
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 891, in save
+    self.save_base(
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/base.py", line 1124, in _save_table
+    (getattr(self, f.attname) if raw else f.pre_save(self, False)),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 338, in pre_save
+    file.save(file.name, file.file, save=False)
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/files.py", line 99, in save
+    self.name = self.storage.save(name, content, max_length=self.field.max_length)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/base.py", line 49, in save
+    name = self._save(name, content)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/files/storage/filesystem.py", line 137, in _save
+    fd = os.open(full_path, open_flags, 0o666)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/media/uploads/dp/868ebd1f-6214-41d7-9b13-ab5938f8c818.jpg'
+ERROR 2024-11-17 09:35:08,388 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 09:35:09,216 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-17 09:50:43,303 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 09:50:44,140 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-17 09:56:33,369 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 09:56:34,220 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-17 09:58:52,660 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-17 09:58:53,538 log Internal Server Error: /posts/title-0/ None

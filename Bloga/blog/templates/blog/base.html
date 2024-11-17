@@ -28,7 +28,7 @@
                 <div
                     class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     
-                    {% if user %}
+                    {% if user.username %}
                     <!-- Profile dropdown -->
                         <a title="write an article" href="{% url 'blog:write' %}">
                             <button type="button"
@@ -61,12 +61,14 @@
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1"
                                 id="profile_menu">
                                 <!-- Active: "bg-gray-100", Not Active: "" -->
-                                <a href="{% url 'blog:profile' user.username%}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">Profile</a>
-                                <a href="{% url 'blog:user_saved' user.username%}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">Saved</a>
-                                <a href="{% url 'blog:user_favorites' user.username%}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">Favorites</a>
+                                {% if user.username %}
+                                    <a href="{% url 'blog:profile' user.username%}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                    id="user-menu-item-0">Profile</a>
+                                    <a href="{% url 'blog:user_saved' user.username%}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                    id="user-menu-item-0">Saved</a>
+                                    <a href="{% url 'blog:user_favorites' user.username%}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+                                    id="user-menu-item-0">Favorites</a>
+                                {% endif %}
                                 <a href="{% url 'authentication:sign_out' %}" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                                 id="user-menu-item-2">Sign out</a>
                             </div>

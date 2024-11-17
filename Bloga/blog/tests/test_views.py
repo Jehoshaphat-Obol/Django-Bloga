@@ -7,6 +7,7 @@ from authentication.models import *
 from django.contrib.auth import authenticate
 from django.contrib.messages import get_messages
 from django.core.files.uploadedfile import SimpleUploadedFile
+
 import io
 from PIL import Image
 
@@ -209,13 +210,11 @@ class PostDetailViewTest(TestCase):
         response = self.client.get(reverse("blog:post", kwargs={"link": post.link}))
         self.assertEqual(response.status_code, 200)
     
-                 
     def test_post_not_found(self):
         post = Posts.objects.first()
+        
         response = self.client.get(reverse("blog:post", kwargs={"link": "alksdlas"}))
-        self.assertEqual(response.status_code, 404)
-    
-    
+        self.assertEqual(response.status_code, 404)  
     
     def test_view_has_comment_form_loaded(self):
         post = Posts.objects.first()

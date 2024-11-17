@@ -49,10 +49,12 @@
 
                 <div class="text-sm leading-6">
                 <p class="font-semibold text-gray-900">
-                    <a href="{% url 'blog:profile' post.author.username %}">
-                    <span class="absolute inset-0"></span>
-                    @{{post.author.username}}
-                    </a>
+                    {% if post.author.username %}
+                        <a href="{% url 'blog:profile' post.author.username %}">
+                        <span class="absolute inset-0"></span>
+                        @{{post.author.username}}
+                        </a>
+                    {% endif %}
                 </p>
                 <p class="text-gray-600">Author</p>
                 </div>
