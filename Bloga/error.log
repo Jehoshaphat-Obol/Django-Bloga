@@ -189,6 +189,7 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'posts-list' not found. 'posts-list' is not a valid view function or pattern name.
 ERROR 2024-11-05 23:52:38,528 basehttp "GET /api/ HTTP/1.1" 500 127313 None
+<<<<<<< Updated upstream
 ERROR 2024-11-13 09:47:02,834 log Internal Server Error: / (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("'djdt' is not a registered namespace"), <traceback object at 0x79df069d6dc0>)
 Traceback (most recent call last):
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/template/base.py", line 883, in _resolve_lookup
@@ -3335,6 +3336,9 @@ Traceback (most recent call last):
     raise SuspiciousFileOperation(
 django.core.exceptions.SuspiciousFileOperation: The joined path (/media/uploads/dp/351e7b8d-33a3-49ae-b2e9-0d3bb8483e6a.jpg) is located outside of the base path component (/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/contrib/admin/static)
 ERROR 2024-11-17 07:34:40,491 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7539a6ba7050>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7539a6d17000>)
+=======
+ERROR 2024-11-08 12:00:16,169 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x754ea39d5b80>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x754ea39e4ec0>)
+>>>>>>> Stashed changes
 Traceback (most recent call last):
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -3380,6 +3384,7 @@ Traceback (most recent call last):
     _setattr(self, field.name, rel_obj)
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
     raise ValueError(
+<<<<<<< Updated upstream
 ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7539a6ba7050>": "AuthToken.user" must be a "User" instance.
 ERROR 2024-11-17 07:36:38,112 log Internal Server Error: /posts/alksdlas/ None
 ERROR 2024-11-17 07:36:38,952 log Internal Server Error: /posts/title-0/ None
@@ -3419,6 +3424,12 @@ Traceback (most recent call last):
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 PermissionError: [Errno 13] Permission denied: '/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/media/uploads/dp/d638de8b-4925-4e78-b539-876ef5df45db.jpg'
 ERROR 2024-11-17 08:41:07,073 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x767b336e7380>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x767b336fcf40>)
+=======
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x754ea39d5b80>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-08 12:02:05,758 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-08 12:02:06,610 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-08 12:18:57,964 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c8da4241ac0>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7c8da424a4c0>)
+>>>>>>> Stashed changes
 Traceback (most recent call last):
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -3442,7 +3453,11 @@ Traceback (most recent call last):
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<<<<<<< Updated upstream
   File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+=======
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 95, in post
+>>>>>>> Stashed changes
     return super().post(request, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
@@ -3464,8 +3479,15 @@ Traceback (most recent call last):
     _setattr(self, field.name, rel_obj)
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
     raise ValueError(
+<<<<<<< Updated upstream
 ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x767b336e7380>": "AuthToken.user" must be a "User" instance.
 ERROR 2024-11-17 08:43:24,025 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c0a1cba96a0>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7c0a1cba4ac0>)
+=======
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c8da4241ac0>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-08 12:20:57,840 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-08 12:21:02,337 log Internal Server Error: /posts/title-0/ None
+ERROR 2024-11-08 12:41:27,291 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7ce660f38a10>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7ce660f41ec0>)
+>>>>>>> Stashed changes
 Traceback (most recent call last):
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -3489,7 +3511,11 @@ Traceback (most recent call last):
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
     response = handler(request, *args, **kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<<<<<<< Updated upstream
   File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 91, in post
+=======
+  File "/home/jehoshaphat/Documents/Tunga.io/Django/Bloga/api/authentication/views.py", line 95, in post
+>>>>>>> Stashed changes
     return super().post(request, *args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/knox/views.py", line 75, in post
@@ -3511,6 +3537,7 @@ Traceback (most recent call last):
     _setattr(self, field.name, rel_obj)
   File "/home/jehoshaphat/Documents/Tunga.io/Django/env/lib/python3.12/site-packages/django/db/models/fields/related_descriptors.py", line 287, in __set__
     raise ValueError(
+<<<<<<< Updated upstream
 ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7c0a1cba96a0>": "AuthToken.user" must be a "User" instance.
 ERROR 2024-11-17 08:45:47,226 log Internal Server Error: /api/login/ (<class 'ValueError'>, ValueError('Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x74341948aff0>": "AuthToken.user" must be a "User" instance.'), <traceback object at 0x7434197d2540>)
 Traceback (most recent call last):
@@ -3715,3 +3742,8 @@ ERROR 2024-11-17 09:56:33,369 log Internal Server Error: /posts/alksdlas/ None
 ERROR 2024-11-17 09:56:34,220 log Internal Server Error: /posts/title-0/ None
 ERROR 2024-11-17 09:58:52,660 log Internal Server Error: /posts/alksdlas/ None
 ERROR 2024-11-17 09:58:53,538 log Internal Server Error: /posts/title-0/ None
+=======
+ValueError: Cannot assign "<django.contrib.auth.models.AnonymousUser object at 0x7ce660f38a10>": "AuthToken.user" must be a "User" instance.
+ERROR 2024-11-08 12:43:10,344 log Internal Server Error: /posts/alksdlas/ None
+ERROR 2024-11-08 12:43:11,150 log Internal Server Error: /posts/title-0/ None
+>>>>>>> Stashed changes

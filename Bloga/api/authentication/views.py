@@ -15,6 +15,8 @@ from .permissions import (
 from knox.views import LoginView
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from django.contrib.auth import login
+from rest_framework import status
+from rest_framework.response import Response
 
 class UserListView(ListCreateAPIView):
     """
@@ -89,5 +91,12 @@ class LoginAPI(LoginView):
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
         
+<<<<<<< Updated upstream
         request.user = user
         return super().post(request, *args, **kwargs)
+=======
+        if user.is_authenticated:
+            return super().post(request, *args, **kwargs)
+        
+        return Response({'detail': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
+>>>>>>> Stashed changes

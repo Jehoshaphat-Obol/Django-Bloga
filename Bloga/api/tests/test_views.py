@@ -203,7 +203,7 @@ class LoginAPITest(APITestCase):
         self.username = 'testuser'
         self.password = 'testpass123'
         self.user = User.objects.create_user(username=self.username, password=self.password)
-        self.login_url = reverse('login')  # Assuming 'login' is the name of the login URL
+        self.login_url = reverse('login')  # Ensure this is the correct URL name for your login endpoint
 
     def test_login_success(self):
         """
@@ -213,11 +213,14 @@ class LoginAPITest(APITestCase):
             'username': self.username,
             'password': self.password
         }
+
+        # Send credentials directly to the login endpoint
         response = self.client.post(self.login_url, data, format='json')
 
-        # Check if the login was successful and Knox token is returned
+        # Verify that the login was successful and that a Knox token is returned in the response
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertIn('token', response.data)  # Knox token should be in the response
+        self.assertIn('token', response.data)
+
 
     def test_login_failure(self):
         """
