@@ -7,3 +7,4 @@ Bloga/htmlcov/
 Bloga/authentication/static/media/uploads/dp/
 pg_bouncer_secret.txt
 *secret*
+*.zip
