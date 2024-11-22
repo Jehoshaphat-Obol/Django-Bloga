@@ -91,12 +91,5 @@ class LoginAPI(LoginView):
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data['user']
         
-<<<<<<< Updated upstream
         request.user = user
         return super().post(request, *args, **kwargs)
-=======
-        if user.is_authenticated:
-            return super().post(request, *args, **kwargs)
-        
-        return Response({'detail': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
->>>>>>> Stashed changes

@@ -5,3 +5,5 @@ init.sh
 .env
 Bloga/htmlcov/
 Bloga/authentication/static/media/uploads/dp/
+*.zip
+*.log

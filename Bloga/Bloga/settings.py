@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     
     # third party apps
     'taggit',
+    'markdownify',
     'rest_framework',
     "knox",
     "drf_yasg",
@@ -241,3 +242,28 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+
+## security
+# SECURE_HSTS_SECONDS = 31536000  
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SESSION_COOKIE_SECURE = True 
+# CSRF_COOKIE_SECURE = True
+
+
+# markdownify
+MARKDOWNIFY = {
+   "default": {
+      "WHITELIST_TAGS": [
+          'a','abbr','acronym','b','blockquote','br','caption','code','del','em','h1', 'h2', 'h3', 'h4', 'h5', 'h6','i','img','li','ol','p','pre','q','s','strong','table','td','th','tr','ul','hr','sub','sup','u','details','summary','mark','figure','figcaption',
+        ]
+   },
+
+   "alternative": {
+      "WHITELIST_TAGS": ["a", "p", ],
+      "MARKDOWN_EXTENSIONS": ["markdown.extensions.fenced_code", ]
+   }
+}

@@ -62,12 +62,6 @@ class Posts(models.Model):
         Extend the function used to save posts to make sure that links are always unique
         """
         
-        # set publish to now when ever the status is changed from draft to published
-        if not Posts.published.filter(link=self.link).exists() and self.status == "PB":
-            self.publish = timezone.now()
-        else:
-            self.publish = None
-        
         if update:
             super().save(*args, **kwargs)
             return 
@@ -88,6 +82,11 @@ class Posts(models.Model):
             queryset = Posts.objects.filter(link=self.link)
             counter += 1
         
+        # set publish to now when ever the status is changed from draft to published
+        if not Posts.published.filter(link=self.link).exists() and self.status == "PB":
+            self.publish = timezone.now()
+        else:
+            self.publish = None
         # save the model    
         super().save(*args, **kwargs)
         

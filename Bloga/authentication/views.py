@@ -22,7 +22,7 @@ def sign_up_view(request):
             messages.success(request, f"Hello {user.first_name} {user.last_name}, Welcome to Bloga 🎊")
             return redirect("blog:home")
     
-        messages.error(request, f"{", ".join(form.error_messages)}")
+        messages.error(request, f"{', '.join(form.error_messages)}")
         
     context = {
         "form": form,

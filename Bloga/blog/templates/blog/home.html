@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 {% load static %}
-
+{% load markdownify %}
 {% block title%}Home{% endblock %}
 
 {% block content %}
@@ -38,7 +38,7 @@
                     {{post.title}}
                 </a>
                 </h3>
-                <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{post.content}}</p>
+                <div class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">{{post.content|truncatechars:100|markdownify}}</div>
             </div>
             <div class="relative mt-8 flex items-center gap-x-4">
                 {% if post.author.profile.dp %}
