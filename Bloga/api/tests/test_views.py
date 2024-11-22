@@ -364,7 +364,7 @@ class PostsListViewTest(APITestCase):
         # Check if post creation was successful
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(Posts.objects.count(), 4)
-        self.assertEqual(Posts.objects.last().title, 'New Post')
+        self.assertEqual(Posts.objects.filter(title=new_post_data['title']).first().title, 'New Post')
 
     def test_create_post_unauthenticated(self):
         """

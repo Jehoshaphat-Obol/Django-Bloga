@@ -83,7 +83,7 @@ class Posts(models.Model):
             counter += 1
         
         # set publish to now when ever the status is changed from draft to published
-        if not Posts.published.filter(link=self.link).exists() and self.status == "PB":
+        if (not Posts.published.filter(link=self.link).exists() and self.status == "PB") or self.status == "PB":
             self.publish = timezone.now()
         else:
             self.publish = None
